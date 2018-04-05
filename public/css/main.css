@@ -20,6 +20,10 @@
   border-radius: 25px;
 }
 
+#carousel1 {
+  margin-top: 20px;
+}
+
 body {
   background-image: url("../images/background.jpg");
   background-repeat: no-repeat;
@@ -69,35 +73,11 @@ body {
   color: black;
   position: fixed;
   bottom: 0;
-  height: 30px;
+  height: 25px;
   align-content: center;
 }
 
-/* .card-img-top {
-  height: 250px;
-  width: 350px;
-} */
+.logo {
+  height: 50px;
 
-/* Style the header
-/* .header {
-  padding: 10px 16px;
-  background: #555;
-  color: #f1f1f1;
 }
-
-/* Page content */
-/* .content {
-  padding: 16px;
-} */
-
-/* The sticky class is added to the header with JS when it reaches its scroll position */
-/* .sticky {
-  position: fixed;
-  top: 0;
-  width: 100%
-} */
-
-/* Add some top padding to the page content to prevent sudden quick movement (as the header gets a new position at the top of the page (position:fixed and top:0) */
-/* .sticky + .content {
-  padding-top: 102px;
-} */
