@@ -10,6 +10,7 @@
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
     crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" media="screen" href="../css/main.css" />
+  <link rel="shortcut icon" type="image/png" href="../images/favicon.png"/>
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
     integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
     crossorigin="anonymous"></script>
@@ -22,36 +23,36 @@
   <script src="../js/main.js"></script>
 </head>
 <body>
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-light header" id="myHeader">
-      <a class="navbar-brand" href="#">Pet Pals</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-      <div class="collapse navbar-collapse" id="navbarNavDropdown">
-        <ul class="navbar-nav">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">PhotoBooth</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">About Us</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Resources
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href="#">Get Involved</a>
-              <a class="dropdown-item" href="#">Services</a>
-              <a class="dropdown-item" href="#">Something else here</a>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </nav>
+     <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light header" id="myHeader">
+    <a class="navbar-brand" href="#"><img src="../images/logo.png" class="logo"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav" id="navitems">
+        <li class="nav-item">
+          <a class="nav-link" href="home.html">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Resources
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="#">Get Involved</a>
+            <a class="dropdown-item" href="services.html">Services</a>
+            <a class="dropdown-item" href="aboutus.html">About Us</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="profile.html">Profile</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="photobooth.html">PhotoBooth</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
   <!-- Jumbotron -->
   <div class="jumbotron jumbotron-fluid">
     <div class="container">
@@ -59,5 +60,10 @@
       <p class="lead">Team Front Row will strut their stuff here.</p>
     </div>
   </div>
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <span class="text-muted">Copyright 2018 &copy PetPal</span>
+      </div>
 </body>
 </html>
