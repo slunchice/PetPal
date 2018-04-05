@@ -1,0 +1,50 @@
+.padd {
+    padding: 10px;
+}
+
+.btnedit {
+    margin-top: 30px;
+}
+
+#profile {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.322);
+    align-content: center;
+    width: 50%;
+    border-radius: 20px;
+    margin-top: 80px;
+    margin-bottom: 80px;
+}
+
+.listing {
+    float: center;
+    padding: 20px;
+}
+
+.imgg {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.bio {
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.my-4{
+    width: 60%;
+}
+
+.my-3{
+    width: 20%;
+    padding: none!important;
+    margin: none!important;
+    border: none!important;
+}
+
+.breakk {
+    margin-top: -5px;
+    height: 1px;
+    width: 40px;
+    background-color: rgba(68, 68, 68, 0.685);
+}
