@@ -1,20 +1,23 @@
 #myHeader {
   position: fixed;
   top: 0;
+  z-index: 5;
   width: 100%;
-  margin-bottom: 10px;
+  background-color: rgb(255, 254, 254);
 }
 
 .carousel-slide {
   height: 1000px;
   width: 1000px;
   margin: auto;
+  border-radius: 25px;
 }
 
 .carousel-inner {
   height: 750px;
   width: 1000px;
   margin: auto;
+  border-radius: 25px;
 }
 
 body {
@@ -25,22 +28,49 @@ body {
 }
 
 .jumbotron {
-  opacity: 0.50;
+  background-color: rgba(255, 255, 255, 0.322);
   width: 750px;
   margin: auto;
-  margin-top: 50px;
+  margin-top: 80px;
   text-align: center;
+  border-radius: 25px;
 }
 
 .card {
   text-align: center;
   position: center;
   margin: auto;
+  border-radius: 25px;
 }
 
 .picture {
-  z-index: 5;
-  opacity: 1;
+  margin: 2px;
+  border-radius: 10px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgb(0, 0, 0);
+}
+
+#photos{
+  margin-bottom: 50px;
+  border-radius: 25px;
+  background-color: rgba(255, 255, 255, 0.322);
+}
+
+#navitems{
+  position: fixed;
+  right: 10px;
+}
+
+.footer {
+  background-color: rgb(255, 254, 254);
+  width: 100%;
+  text-align: center;
+  color: black;
+  position: fixed;
+  bottom: 0;
+  height: 30px;
+  align-content: center;
 }
 
 /* .card-img-top {
