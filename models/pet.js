@@ -59,7 +59,7 @@ module.exports = function(sequelize, DataTypes) {
             allowNull: true,
             validate: {
                 isUrl: false,
-                // len: [1, 255],
+                len: [1, 255],
                 // no special characters allowed
                 is: ["^[a-z]+$",'i']
               }
