@@ -2,13 +2,27 @@ module.exports = function(sequelize, DataTypes) {
     var Owner = sequelize.define("Owner", {
         
       name: {
-          type: DataTypes.STRING
+          type: DataTypes.STRING,
+          allowNull: false,
+          validate: {
+            len: [1, 255]
+          }
       },
       age: {
-          type: DataTypes.INTEGER
+          type: DataTypes.INTEGER,
+          allowNull: false,
+          validate: {
+            len: [1, 255]
+          }
+          
       },
       gender: {
-          type: DataTypes.STRING
+          type: DataTypes.STRING,
+          allowNull: false,
+          validate: {
+            len: [1, 255]
+          }
+          
       },
 
     });
