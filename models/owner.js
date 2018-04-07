@@ -31,6 +31,17 @@ module.exports = function(sequelize, DataTypes) {
           
       },
 
+      location: {
+          type: DataTypes.STRING,
+          allowNull: false,
+          validate: {
+            // input must be lowercase in order to work with the 'equals: 'yes'' validation below
+            isLowercase: true,
+            // validating that user answered 'yes' to the question 'Do you live in the Charlotte area?'
+             equals: 'yes',
+          }
+      }
+
     });
 
     Owner.associate = function(models) {
