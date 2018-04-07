@@ -2,32 +2,48 @@ module.exports = function(sequelize, DataTypes) {
     var Pet = sequelize.define("Pet",  {
         name: {
             type: DataTypes.STRING,
-            allowNull: false
+            allowNull: false,
+            isUrl: false,
+              
+            
         },
         gender: {
             type: DataTypes.STRING,
-            allowNull: false
+            allowNull: false,
+            isUrl: false,
+              
+            
         },
         age: {
             type: DataTypes.INTEGER,
-            allowNull: false
+            allowNull: false,
+            isUrl: false,
+              
+            
         },
         size: {
             type: DataTypes.STRING,
-            allowNull: false
+            allowNull: false,
+            isUrl: false,
+              
+            
             
         },
         bio: {
             type: DataTypes.TEXT,
-            allowNull: true
+            allowNull: true,
+            isUrl: false,
+              
+            
         },
         breed: {
             type: DataTypes.STRING,
-            allowNull: true
+            allowNull: true,
+            isUrl: false,
         }
     });
 
-    // Associating pets to Owner
+    // Associating pets to Owner table
     Pet.associate = function(models) {
         Pet.belongsTo(models.Owner, {
           foreignKey: {
@@ -38,7 +54,6 @@ module.exports = function(sequelize, DataTypes) {
 
     return Pet;
 }
-
 
 
 // validating inputs
