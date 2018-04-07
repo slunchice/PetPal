@@ -1,9 +1,11 @@
 module.exports = function(sequelize, DataTypes) {
+    // creating table of owners
     var Owner = sequelize.define("Owner", {
-        
+        // table columns for name, age, gender, and location
       name: {
           type: DataTypes.STRING,
           allowNull: false,
+        // validating length of input, no external url links, and no special characters except - or '
           validate: {
             len: [1, 255],
             isUrl: false,
@@ -16,6 +18,7 @@ module.exports = function(sequelize, DataTypes) {
           validate: {
             len: [1, 3],
             isUrl: false,
+            // input must be an integer
             isInt: true
           }
           
@@ -26,6 +29,7 @@ module.exports = function(sequelize, DataTypes) {
           validate: {
             isUrl: false,
             len: [1, 255],
+            // no special characters allowed
             is: ["^[a-z]+$",'i']
           }
           
