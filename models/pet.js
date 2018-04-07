@@ -19,7 +19,7 @@ module.exports = function(sequelize, DataTypes) {
         },
         bio: {
             type: DataTypes.TEXT,
-            allowNull: false
+            allowNull: true
         },
         breed: {
             type: DataTypes.STRING,
@@ -27,7 +27,18 @@ module.exports = function(sequelize, DataTypes) {
         }
     });
 
+    // Associating pets to Owner
+    Pet.associate = function(models) {
+        Pet.belongsTo(models.Owner, {
+          foreignKey: {
+            allowNull: false
+          }
+        });
+      };
+
     return Pet;
 }
 
-// next step: associate Pets table with Owner table
+
+
+// validating inputs
