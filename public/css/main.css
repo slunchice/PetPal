@@ -82,3 +82,51 @@ body {
   height: 50px;
 
 }
+
+.spacing {
+  margin-top: 100px;
+  margin-bottom: 60px;
+}
+
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+}
+
+.fa:hover {
+  opacity: 0.7;
+}
+
+.fa-linkedin {
+  background: #007bb5;
+  color: white;
+}
+
+.team-title{
+  border-style: solid;
+  border-width: 2px;
+}
+
+.title-spacing {
+  margin-top: 40px;
+  margin-bottom: 15px;
+}
+
+.team-bio{
+  margin-top: 30px;
+}
+
+.bio-quote {
+  font-style: italic;
+}
+
+#our-story {
+  border-style: solid;
+  border-width: 1px;
+  padding: 30px;
+  margin-bottom: 100px;
+}
