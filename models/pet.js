@@ -3,6 +3,7 @@ module.exports = function(sequelize, DataTypes) {
         name: {
             type: DataTypes.STRING,
             allowNull: false,
+            // no external urls allowed
             isUrl: false,
               
             
@@ -18,6 +19,7 @@ module.exports = function(sequelize, DataTypes) {
             type: DataTypes.INTEGER,
             allowNull: false,
             isUrl: false,
+            isInt: true
               
             
         },
@@ -56,4 +58,3 @@ module.exports = function(sequelize, DataTypes) {
 }
 
 
-// validating inputs
