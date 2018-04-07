@@ -27,7 +27,7 @@ module.exports = function(sequelize, DataTypes) {
         }
     });
 
-    // Associating pets to Owner
+    // Associating pets to Owner table
     Pet.associate = function(models) {
         Pet.belongsTo(models.Owner, {
           foreignKey: {
@@ -38,7 +38,6 @@ module.exports = function(sequelize, DataTypes) {
 
     return Pet;
 }
-
 
 
 // validating inputs
