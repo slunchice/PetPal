@@ -130,3 +130,68 @@ body {
   padding: 30px;
   margin-bottom: 100px;
 }
+
+.input {
+  width: 60%;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border-style: solid;
+  border-width: 1px;
+  background-color: transparent;
+}
+
+.input:active{
+  border-color: none;
+  outline: none;
+}
+
+textarea:focus, input:focus{
+  outline: none;
+}
+
+*:focus {
+  outline: none;
+}
+
+#msg {
+  height: 100px;
+}
+
+#emailbtn {
+  background-color: transparent;
+  border-style: solid;
+  border-width: 1px;
+  border-color: black;
+}
+
+#emailbtn:hover{
+  background-color: rgba(0, 0, 0, 0.11);
+}
+
+#emailbtn:active {
+  background-color: rgba(0, 0, 0, 0.247);
+  outline: none;
+}
+
+#emailbtn:focus {
+  outline: none;
+}
+
+#contactlabel{
+  margin-top:-30px;
+  margin-bottom: 10px;
+}
+
+.fix{
+  margin-bottom: -6px;
+}
+
+.fa-linkedin{
+ 
+
+}
+
+.profile-img{
+  height: 100px;
+  width: 100px;
+}
