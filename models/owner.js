@@ -37,7 +37,7 @@ module.exports = function(sequelize, DataTypes) {
           validate: {
             // input must be lowercase in order to work with the 'equals: 'yes'' validation below
             isLowercase: true,
-            // validating that user answered 'yes' to the question 'Do you live in the Charlotte area?'
+            // validating that user answered 'yes' to the client-side question 'Do you live in the Charlotte area?'
              equals: 'yes',
           }
       }
