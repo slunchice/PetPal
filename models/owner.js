@@ -5,14 +5,18 @@ module.exports = function(sequelize, DataTypes) {
           type: DataTypes.STRING,
           allowNull: false,
           validate: {
-            len: [1, 255]
+            len: [1, 255],
+            isUrl: false,
+            is: ["^[a-z-']+$",'i']
           }
       },
       age: {
           type: DataTypes.INTEGER,
           allowNull: false,
           validate: {
-            len: [1, 255]
+            len: [1, 3],
+            isUrl: false,
+            isInt: true
           }
           
       },
@@ -20,7 +24,9 @@ module.exports = function(sequelize, DataTypes) {
           type: DataTypes.STRING,
           allowNull: false,
           validate: {
-            len: [1, 255]
+            isUrl: false,
+            len: [1, 255],
+            is: ["^[a-z]+$",'i']
           }
           
       },
@@ -34,6 +40,7 @@ module.exports = function(sequelize, DataTypes) {
           onDelete: "cascade"
         });
       };
+
   
     return Owner;
   };
