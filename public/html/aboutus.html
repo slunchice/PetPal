@@ -12,6 +12,7 @@
   <link rel="stylesheet" type="text/css" media="screen" href="../css/main.css" />
   <link rel="shortcut icon" type="image/png" href="../images/favicon.png"/>
   <link href="https://fonts.googleapis.com/css?family=Domine" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
     integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
     crossorigin="anonymous"></script>
@@ -26,41 +27,311 @@
 <body>
      <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-light header" id="myHeader">
-    <a class="navbar-brand" href="#"><img src="../images/logo.png" class="logo"></a>
+    <a class="navbar-brand" href="home.html"><img src="../images/logo.png" class="logo"></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav" id="navitems">
         <li class="nav-item">
-          <a class="nav-link" href="home.html">Home <span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="home.html" id="home">Home <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Resources
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="#">Get Involved</a>
-            <a class="dropdown-item" href="services.html">Services</a>
-            <a class="dropdown-item" href="aboutus.html">About Us</a>
+            <a class="dropdown-item" href="getinvolved.html" id="getInvolved">Get Involved</a>
+            <a class="dropdown-item" href="services.html" id="services">Services</a>
+            <a class="dropdown-item" href="aboutus.html" id="aboutUs">About Us</a>
           </div>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="profile.html">Profile</a>
+          <a class="nav-link" href="profile.html" id="profile">Profile</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="photobooth.html">PhotoBooth</a>
+          <a class="nav-link" href="photobooth.html" id="photoBooth">PhotoBooth</a>
         </li>
       </ul>
     </div>
   </nav>
   <!-- Jumbotron -->
-  <div class="jumbotron jumbotron-fluid">
+  <div class="jumbotron jumbotron-fluid spacing">
     <div class="container">
-      <h1 class="display-4">About Us</h1>
-      <p class="lead">Team Front Row will strut their stuff here.</p>
+        <h2 class="display-3">Our Story</h2>
+        <div class="row">
+          <div class="col-lg-2"></div>
+          <div class="col-lg-8" id="our-story">
+            <p>Our team of junior developers were provided with the task to build a creative full-stack application to test our development knowledge and skills. We wanted to create something that everyone could relate to but also solve a problem. </p>
+          </div>
+          <div class="col-lg-2"></div>
+        </div>
+    </div>
+    <div class="container">
+      <h2 class="display-4">Meet The Team</h2>
+      <!-- Line Break -->
+      <hr class="my-3">
+      <!-- Front-End Title -->
+      <div class="row title-spacing">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+          <h2 class="team-title"><strong>Front-End</strong></h2>
+        </div>
+        <div class="col-md-3"></div>
+      </div>
+      <!-- Jaclyn Pajor -->
+      <div class="container team-bio">
+          <div class="row">
+            <div class = "col-lg-12">
+              <h3>Jaclyn Pajor</h3>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-3">
+              <img src="http://via.placeholder.com/100x100">
+            </div>
+            <div class="col-lg-6">
+              <div class="row">
+                <!-- PUT QUOTES AROUND YOUR BIO -->
+                <p class="bio-quote">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, nemo. Aliquid molestiae sint dolor. Fuga enim ea necessitatibus reiciendis quaerat!</p>
+              </div>
+              <div class="row">
+                <div class="col-sm-6">
+                    <ul class="profile-list">
+                        <li>Skill</li>
+                        <li>Skill</li>
+                        <li>Skill</li>
+                      </ul>
+                </div>
+                <div class="col-sm-6">
+                    <ul class="profile-list">
+                        <li>Skill</li>
+                        <li>Skill</li>
+                        <li>Skill</li>
+                    </ul>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3">
+              <a href="#" class="fa fa-linkedin"></a>
+              </a>
+            </div>
+          </div>
+        </div>
+      <!-- Ethan Rogers -->
+      <div class="container team-bio">
+          <div class="row">
+            <div class = "col-lg-12">
+              <h3>Ethan Rogers</h3>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-3">
+              <img src="http://via.placeholder.com/100x100">
+            </div>
+            <div class="col-lg-6">
+              <div class="row">
+                <!-- PUT QUOTES AROUND YOUR BIO -->
+                <p class="bio-quote">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, nemo. Aliquid molestiae sint dolor. Fuga enim ea necessitatibus reiciendis quaerat!</p>
+              </div>
+              <div class="row">
+                <div class="col-sm-6">
+                    <ul class="profile-list">
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>Bootstrap</li>
+                      </ul>
+                </div>
+                <div class="col-sm-6">
+                    <ul class="profile-list">
+                      <li>UI/UX</li>
+                      <li>Branding</li>
+                    </ul>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3">
+              <a href="#" class="fa fa-linkedin"></a>
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- Back-End Title -->
+      <div class="row title-spacing">
+          <div class="col-md-3"></div>
+          <div class="col-md-6">
+            <h2 class="team-title"><strong>Back-End</strong></h2>
+          </div>
+          <div class="col-md-3"></div>
+        </div>
+      <!-- Elena Guedes -->
+      <div class="container team-bio">
+          <div class="row">
+            <div class = "col-lg-12">
+              <h3>Elena Guedes</h3>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-3">
+              <img src="http://via.placeholder.com/100x100">
+            </div>
+            <div class="col-lg-6">
+              <div class="row">
+                <!-- PUT QUOTES AROUND YOUR BIO -->
+                <p class="bio-quote">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, nemo. Aliquid molestiae sint dolor. Fuga enim ea necessitatibus reiciendis quaerat!</p>
+              </div>
+              <div class="row">
+                <div class="col-sm-6">
+                    <ul class="profile-list">
+                        <li>Skill</li>
+                        <li>Skill</li>
+                        <li>Skill</li>
+                      </ul>
+                </div>
+                <div class="col-sm-6">
+                    <ul class="profile-list">
+                        <li>Skill</li>
+                        <li>Skill</li>
+                        <li>Skill</li>
+                    </ul>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3">
+              <a href="#" class="fa fa-linkedin"></a>
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- Jesse Springer -->
+         <div class="container team-bio">
+            <div class="row">
+              <div class = "col-lg-12">
+                <h3>Jesse Springer</h3>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-3">
+                <img src="http://via.placeholder.com/100x100">
+              </div>
+              <div class="col-lg-6">
+                <div class="row">
+                  <!-- PUT QUOTES AROUND YOUR BIO -->
+                  <p class="bio-quote">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, nemo. Aliquid molestiae sint dolor. Fuga enim ea necessitatibus reiciendis quaerat!</p>
+                </div>
+                <div class="row">
+                  <div class="col-sm-6">
+                      <ul class="profile-list">
+                          <li>Skill</li>
+                          <li>Skill</li>
+                          <li>Skill</li>
+                        </ul>
+                  </div>
+                  <div class="col-sm-6">
+                      <ul class="profile-list">
+                          <li>Skill</li>
+                          <li>Skill</li>
+                          <li>Skill</li>
+                      </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3">
+                <a href="#" class="fa fa-linkedin"></a>
+                </a>
+              </div>
+            </div>
+          </div>
+      <!-- Full-Stack Title -->
+      <div class="row title-spacing">
+          <div class="col-md-3"></div>
+          <div class="col-md-6">
+            <h2 class="team-title"><strong>Full-Stack</strong></h2>
+          </div>
+          <div class="col-md-3"></div>
+        </div>
+      <!-- George Greene -->
+      <div class="container team-bio">
+          <div class="row">
+            <div class = "col-lg-12">
+              <h3>George Greene</h3>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-3">
+              <img src="http://via.placeholder.com/100x100">
+            </div>
+            <div class="col-lg-6">
+              <div class="row">
+                <!-- PUT QUOTES AROUND YOUR BIO -->
+                <p class="bio-quote">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, nemo. Aliquid molestiae sint dolor. Fuga enim ea necessitatibus reiciendis quaerat!</p>
+              </div>
+              <div class="row">
+                <div class="col-sm-6">
+                    <ul class="profile-list">
+                        <li>Skill</li>
+                        <li>Skill</li>
+                        <li>Skill</li>
+                      </ul>
+                </div>
+                <div class="col-sm-6">
+                    <ul class="profile-list">
+                        <li>Skill</li>
+                        <li>Skill</li>
+                        <li>Skill</li>
+                    </ul>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3">
+              <a href="#" class="fa fa-linkedin"></a>
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- Kurtis Carpenter -->
+        <div class="container team-bio">
+            <div class="row">
+              <div class = "col-lg-12">
+                <h3>Kurtis Carpenter</h3>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-3">
+                <img src="http://via.placeholder.com/100x100">
+              </div>
+              <div class="col-lg-6">
+                <div class="row">
+                  <!-- PUT QUOTES AROUND YOUR BIO -->
+                  <p class="bio-quote">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, nemo. Aliquid molestiae sint dolor. Fuga enim ea necessitatibus reiciendis quaerat!</p>
+                </div>
+                <div class="row">
+                  <div class="col-sm-6">
+                      <ul class="profile-list">
+                          <li>Skill</li>
+                          <li>Skill</li>
+                          <li>Skill</li>
+                        </ul>
+                  </div>
+                  <div class="col-sm-6">
+                      <ul class="profile-list">
+                          <li>Skill</li>
+                          <li>Skill</li>
+                          <li>Skill</li>
+                      </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3">
+                <a href="#" class="fa fa-linkedin"></a>
+                </a>
+              </div>
+            </div>
+          </div>
+
     </div>
   </div>
+
     <!-- Footer -->
     <footer class="footer">
       <div class="container">

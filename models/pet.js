@@ -6,27 +6,46 @@ module.exports = function(sequelize, DataTypes) {
             // no external urls allowed
             isUrl: false,
               
+            validate: {
+                len: [1, 255],
+                isUrl: false,
+                is: ["^[a-z-']+$",'i']
+              }
             
         },
         gender: {
             type: DataTypes.STRING,
             allowNull: false,
-            isUrl: false,
+            validate: {
+                isUrl: false,
+                len: [1, 255],
+                // no special characters allowed
+                is: ["^[a-z]+$",'i']
+              }
               
             
         },
         age: {
             type: DataTypes.INTEGER,
             allowNull: false,
-            isUrl: false,
-            isInt: true
+            validate: {
+                len: [1, 3],
+                isUrl: false,
+                // input must be an integer
+                isInt: true
+              }
               
             
         },
         size: {
             type: DataTypes.STRING,
             allowNull: false,
-            isUrl: false,
+            validate: {
+                isUrl: false,
+                len: [1, 255],
+                // no special characters allowed
+                is: ["^[a-z]+$",'i']
+              }
               
             
             
@@ -34,14 +53,19 @@ module.exports = function(sequelize, DataTypes) {
         bio: {
             type: DataTypes.TEXT,
             allowNull: true,
-            isUrl: false,
+            isUrl: false
               
             
         },
         breed: {
             type: DataTypes.STRING,
             allowNull: true,
-            isUrl: false,
+            validate: {
+                isUrl: false,
+                len: [1, 255],
+                // no special characters allowed
+                is: ["^[a-z]+$",'i']
+              }
         }
     });
 
