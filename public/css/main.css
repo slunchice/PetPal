@@ -198,9 +198,11 @@ textarea:focus, input:focus{
 
 .loginDiv{
   text-align: center;
-  margin-top: 150px;
+  margin-top: 10px;
 }
-#signIn, #signOut{
+#signIn, #signOut, loginDiv{
+  font-family: 'Domine', serif;
+  font-size: 30px;
   text-align: center;  
   background-color: rgba(255, 255, 255, 0.322);
   width: 50%;
@@ -208,6 +210,9 @@ textarea:focus, input:focus{
   height: 200px;
   width: 300px;
   border-radius: 20px;
-  margin-top: 100px;
-  margin-bottom: 80px;
+}
+
+.loginLogo{
+  width: 300px;
+  height: 300px;
 }
