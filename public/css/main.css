@@ -20,7 +20,12 @@
   border-radius: 25px;
 }
 
+#carousel1 {
+  margin-top: 20px;
+}
+
 body {
+  font-family: 'Domine', serif;
   background-image: url("../images/background.jpg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -69,35 +74,124 @@ body {
   color: black;
   position: fixed;
   bottom: 0;
-  height: 30px;
+  height: 25px;
   align-content: center;
 }
 
-/* .card-img-top {
-  height: 250px;
-  width: 350px;
-} */
+.logo {
+  height: 50px;
 
-/* Style the header
-/* .header {
-  padding: 10px 16px;
-  background: #555;
-  color: #f1f1f1;
 }
 
-/* Page content */
-/* .content {
-  padding: 16px;
-} */
+.spacing {
+  margin-top: 100px;
+  margin-bottom: 60px;
+}
 
-/* The sticky class is added to the header with JS when it reaches its scroll position */
-/* .sticky {
-  position: fixed;
-  top: 0;
-  width: 100%
-} */
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+}
 
-/* Add some top padding to the page content to prevent sudden quick movement (as the header gets a new position at the top of the page (position:fixed and top:0) */
-/* .sticky + .content {
-  padding-top: 102px;
-} */
+.fa:hover {
+  opacity: 0.7;
+}
+
+.fa-linkedin {
+  background: #007bb5;
+  color: white;
+}
+
+.team-title{
+  border-style: solid;
+  border-width: 2px;
+}
+
+.title-spacing {
+  margin-top: 40px;
+  margin-bottom: 15px;
+}
+
+.team-bio{
+  margin-top: 30px;
+}
+
+.bio-quote {
+  font-style: italic;
+}
+
+#our-story {
+  border-style: solid;
+  border-width: 1px;
+  padding: 30px;
+  margin-bottom: 100px;
+}
+
+.input {
+  width: 60%;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border-style: solid;
+  border-width: 1px;
+  background-color: transparent;
+}
+
+.input:active{
+  border-color: none;
+  outline: none;
+}
+
+textarea:focus, input:focus{
+  outline: none;
+}
+
+*:focus {
+  outline: none;
+}
+
+#msg {
+  height: 100px;
+}
+
+#emailbtn {
+  background-color: transparent;
+  border-style: solid;
+  border-width: 1px;
+  border-color: black;
+}
+
+#emailbtn:hover{
+  background-color: rgba(0, 0, 0, 0.11);
+}
+
+#emailbtn:active {
+  background-color: rgba(0, 0, 0, 0.247);
+  outline: none;
+}
+
+#emailbtn:focus {
+  outline: none;
+}
+
+#contactlabel{
+  margin-top:-30px;
+  margin-bottom: 10px;
+}
+
+.fix{
+  margin-bottom: -6px;
+}
+
+.fa-linkedin{
+ 
+
+}
+
+.profile-img{
+  height: 100px;
+  width: 100px;
+}
