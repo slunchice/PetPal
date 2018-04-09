@@ -196,7 +196,6 @@ textarea:focus, input:focus{
   width: 100px;
 }
 
-<<<<<<< HEAD
 .loginDiv{
   text-align: center;
   margin-top: 10px;
@@ -217,7 +216,6 @@ textarea:focus, input:focus{
   width: 600px;
   height: 300px;
 }
-=======
 /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 600px) {
   .col-25, .col-75, .jumbotron, input[type=submit] {
@@ -226,4 +224,3 @@ textarea:focus, input:focus{
   }
 }
 
->>>>>>> aeda4f782df043fb2358a90ff0ba9296ce4ce3f3
