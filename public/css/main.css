@@ -196,6 +196,12 @@ textarea:focus, input:focus{
   width: 100px;
 }
 
+.logo-display {
+  margin-bottom: 20px;
+  width: 40%;
+
+}
+
 /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 600px) {
   .col-25, .col-75, .jumbotron, input[type=submit] {
@@ -204,3 +210,27 @@ textarea:focus, input:focus{
   }
 }
 
+.reference {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.btn-spacing {
+  margin-bottom: 20px;
+  padding: 15px;
+  border: 2px solid;
+}
+
+.btns {
+  margin-bottom: 20px;
+}
+
+#services {
+  margin-bottom: 20px;
+}
+
+.outline {
+  border: 2px solid;
+  margin: 20px;
+  padding: 20px;
+}
