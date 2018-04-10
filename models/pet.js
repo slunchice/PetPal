@@ -50,6 +50,7 @@ module.exports = function(sequelize, DataTypes) {
             
             
         },
+        // optional input
         bio: {
             type: DataTypes.TEXT,
             allowNull: true,
@@ -57,6 +58,7 @@ module.exports = function(sequelize, DataTypes) {
               
             
         },
+        // optional input
         breed: {
             type: DataTypes.STRING,
             allowNull: true,
