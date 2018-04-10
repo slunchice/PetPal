@@ -108,11 +108,11 @@ FB.getLoginStatus(function(response) {
         <!-- Event details -->
         <div class="jumbotron jumbotron-fluid">
           <div class="container">
-            <h1 class="display-4" id="eventLogo0">Event #1</h1>
-            <p class="lead" id="eventName0">Details here</p>
+            <h1 class="display-4" id="eventLogo0"></h1>
+            <p class="lead" id="eventName0"></p>
             <ul>
-              <li id="eventTime0">Detail one</li>
-              <li id="eventUrl0">Detail two</li>
+              <li id="eventTime0"></li>
+              <li id="eventUrl0"></li>
               <!-- <li>Detail three</li> -->
             </ul>
           </div>
@@ -134,12 +134,12 @@ FB.getLoginStatus(function(response) {
         <!-- Event details -->
         <div class="jumbotron jumbotron-fluid">
           <div class="container">
-            <h1 class="display-4" id="eventLogo1">Event #2</h1>
-            <p class="lead" id="eventName1">Some more details here</p>
+            <h1 class="display-4" id="eventLogo1"></h1>
+            <p class="lead" id="eventName1"></p>
             <ul>
-                <li id="eventTime1">Detail one</li>
-                <li id="eventUrl1">Detail two</li>
-                <li>Detail three</li>
+                <li id="eventTime1"></li>
+                <li id="eventUrl1"></li>
+                <!-- <li>Detail three</li> -->
               </ul>
           </div>
         </div>
@@ -160,12 +160,12 @@ FB.getLoginStatus(function(response) {
         <!-- Event details -->
         <div class="jumbotron jumbotron-fluid">
           <div class="container">
-            <h1 class="display-4" id="eventLogo2">Event #3</h1>
-            <p class="lead" id="eventName2">Even more details here</p>
+            <h1 class="display-4" id="eventLogo2"></h1>
+            <p class="lead" id="eventName2"></p>
             <ul>
-                <li id="eventTime2">Detail one</li>
-                <li id="eventUrl2">Detail two</li>
-                <li>Detail three</li>
+                <li id="eventTime2"></li>
+                <li id="eventUrl2"></li>
+                <!-- <li>Detail three</li> -->
               </ul>
           </div>
         </div>
@@ -211,7 +211,7 @@ FB.getLoginStatus(function(response) {
               <ul>
                 <li>Detail one</li>
                 <li>Detail two</li>
-                <li>Detail three</li>
+                <!-- <li>Detail three</li> -->
               </ul>
             </div>
           </div>
@@ -237,7 +237,7 @@ FB.getLoginStatus(function(response) {
               <ul>
                   <li>Detail one</li>
                   <li>Detail two</li>
-                  <li>Detail three</li>
+                  <!-- <li>Detail three</li> -->
                 </ul>
             </div>
           </div>
@@ -263,7 +263,7 @@ FB.getLoginStatus(function(response) {
               <ul>
                   <li>Detail one</li>
                   <li>Detail two</li>
-                  <li>Detail three</li>
+                  <!-- <li>Detail three</li> -->
                 </ul>
             </div>
           </div>
@@ -315,19 +315,30 @@ FB.getLoginStatus(function(response) {
   
           $(document).ready(function() {
       
+            // Variables to build AJAX request to EventBrite API
             var url = "https://www.eventbriteapi.com/v3/events/search/?token=";
             var token = "B67FCSUCKZGEB7QG7FI2";
             var query = "&q=dogs&location.address=charlotte";
       
+            // Service call to EventBrite API
             $.get(url + token + query, function(res) {
               if (res.events.length) {
                 for (var i = 0; i < 3; i++) {
                   var event = res.events[i];
-                  var eventLogo = event.logo.url;
-                  var eventName = event.name.html;
-                  var eventTime = event.start.local;
-                  var eventUrl = event.url;
-                  console.log(res.events[i]);
+                  // Creates newEvent object with each return object in for loop
+                  var newEvent = {
+                    logo: event.logo.url,
+                    name: event.name.html,
+                    time: event.start.local,
+                    url: event.url
+                  }
+                  // Appends each newEvent object to respective DOM elements
+                  $("#eventLogo" + i + "").html("<img id='logo' src='" + newEvent.logo + "'/>");
+                  $("#eventName" + i + "").html(newEvent.name);
+                  $("#eventTime" + i + "").html(newEvent.time);
+                  var string = "Click here for more details!";
+                  var result = string.link("" + newEvent.url + "");
+                  $("#eventUrl" + i + "").html(result);
                 }
               }
             });

@@ -20,7 +20,9 @@
   "homepage": "https://github.com/slunchice/PetPal#readme",
   "dependencies": {
     "body-parser": "^1.18.2",
+    "depd": "^1.1.2",
     "express": "^4.16.3",
+    "ms": "^2.1.1",
     "mysql2": "^1.5.3",
     "sequelize": "^4.37.6"
   },
