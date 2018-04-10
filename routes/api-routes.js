@@ -13,7 +13,7 @@ module.exports = function(app) {
           age: req.body.age,
           gender: req.body.gender,
           location: req.body.location
-        }).then(function(dbTodo) {
+        }).then(function(dbOwner) {
           
           res.json(dbOwner);
         });
