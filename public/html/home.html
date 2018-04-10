@@ -12,9 +12,10 @@
   <link rel="stylesheet" type="text/css" media="screen" href="../css/main.css" />
   <link rel="shortcut icon" type="image/png" href="../images/favicon.png"/>
   <link href="https://fonts.googleapis.com/css?family=Domine" rel="stylesheet">
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
     integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-    crossorigin="anonymous"></script>
+    crossorigin="anonymous"></script> -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
     integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
     crossorigin="anonymous"></script>
@@ -107,12 +108,12 @@ FB.getLoginStatus(function(response) {
         <!-- Event details -->
         <div class="jumbotron jumbotron-fluid">
           <div class="container">
-            <h1 class="display-4">Event #1</h1>
-            <p class="lead">Details here</p>
+            <h1 class="display-4" id="eventLogo0"></h1>
+            <p class="lead" id="eventName0"></p>
             <ul>
-              <li>Detail one</li>
-              <li>Detail two</li>
-              <li>Detail three</li>
+              <li id="eventTime0"></li>
+              <li id="eventUrl0"></li>
+              <!-- <li>Detail three</li> -->
             </ul>
           </div>
         </div>
@@ -133,12 +134,12 @@ FB.getLoginStatus(function(response) {
         <!-- Event details -->
         <div class="jumbotron jumbotron-fluid">
           <div class="container">
-            <h1 class="display-4">Event #2</h1>
-            <p class="lead">Some more details here</p>
+            <h1 class="display-4" id="eventLogo1"></h1>
+            <p class="lead" id="eventName1"></p>
             <ul>
-                <li>Detail one</li>
-                <li>Detail two</li>
-                <li>Detail three</li>
+                <li id="eventTime1"></li>
+                <li id="eventUrl1"></li>
+                <!-- <li>Detail three</li> -->
               </ul>
           </div>
         </div>
@@ -159,12 +160,12 @@ FB.getLoginStatus(function(response) {
         <!-- Event details -->
         <div class="jumbotron jumbotron-fluid">
           <div class="container">
-            <h1 class="display-4">Event #3</h1>
-            <p class="lead">Even more details here</p>
+            <h1 class="display-4" id="eventLogo2"></h1>
+            <p class="lead" id="eventName2"></p>
             <ul>
-                <li>Detail one</li>
-                <li>Detail two</li>
-                <li>Detail three</li>
+                <li id="eventTime2"></li>
+                <li id="eventUrl2"></li>
+                <!-- <li>Detail three</li> -->
               </ul>
           </div>
         </div>
@@ -210,7 +211,7 @@ FB.getLoginStatus(function(response) {
               <ul>
                 <li>Detail one</li>
                 <li>Detail two</li>
-                <li>Detail three</li>
+                <!-- <li>Detail three</li> -->
               </ul>
             </div>
           </div>
@@ -236,7 +237,7 @@ FB.getLoginStatus(function(response) {
               <ul>
                   <li>Detail one</li>
                   <li>Detail two</li>
-                  <li>Detail three</li>
+                  <!-- <li>Detail three</li> -->
                 </ul>
             </div>
           </div>
@@ -262,7 +263,7 @@ FB.getLoginStatus(function(response) {
               <ul>
                   <li>Detail one</li>
                   <li>Detail two</li>
-                  <li>Detail three</li>
+                  <!-- <li>Detail three</li> -->
                 </ul>
             </div>
           </div>
@@ -295,13 +296,16 @@ FB.getLoginStatus(function(response) {
         <div class="container">
           <!-- <h1 class="display-4"></h1> -->
           <p class="lead">Check out the PhotoBooth page for adorable puppy pics!</p>
-          <div>
+
+        <div id="puppies"></div>
+          <!-- <div>
             <img src="../images/puppy1.jpg" class="picture" style="width:300px;height:300px;">
             <img src="../images/puppy2.jpg" class="picture" style="width:300px;height:300px;">
             <img src="../images/puppy3.jpg" class="picture" style="width:300px;height:300px;">
-          </div>
+          </div> -->
         </div>
       </div>
+
 
       <!-- Footer -->
       <footer class="footer">
@@ -309,5 +313,54 @@ FB.getLoginStatus(function(response) {
           <span class="text-muted">Copyright 2018 &copy PetPal</span>
         </div>
   
+        <!-- Javascript -->
+        <script type="text/javascript">
+  
+          $(document).ready(function() {
+      
+            // Variables to build AJAX request to EventBrite API
+            var url = "https://www.eventbriteapi.com/v3/events/search/?token=";
+            var token = "B67FCSUCKZGEB7QG7FI2";
+            var query = "&q=dogs&location.address=charlotte";
+      
+            // Service call to EventBrite API
+            $.get(url + token + query, function(res) {
+              if (res.events.length) {
+                for (var i = 0; i < 3; i++) {
+                  var event = res.events[i];
+                  // Creates newEvent object with each return object in for loop
+                  var newEvent = {
+                    logo: event.logo.url,
+                    name: event.name.html,
+                    time: event.start.local,
+                    url: event.url
+                  }
+                  // Appends each newEvent object to respective DOM elements
+                  $("#eventLogo" + i + "").html("<img id='logo' src='" + newEvent.logo + "'/>");
+                  $("#eventName" + i + "").html(newEvent.name);
+                  $("#eventTime" + i + "").html(newEvent.time);
+                  var string = "Click here for more details!";
+                  var result = string.link("" + newEvent.url + "");
+                  $("#eventUrl" + i + "").html(result);
+                }
+              }
+            });
+
+            var gettyRequestString = "https://api.gettyimages.com/v3/search/images";
+
+            $.get("https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=bed17b684fe0ac48ad37f0091c384098&tags=puppy&format=json&nojsoncallback=1&auth_token=72157693720521961-1755b57971270204&api_sig=850fbd3cad60d728653c8f366c07eb53", function(res) {
+              console.log(res);
+              for (var i = 0; i < 10; i++) {
+                var photo = res.photos.photo[i];
+                var constructedPhoto = "https://farm" + photo.farm + ".staticflickr.com/" + photo.server + "/" + photo.id + "_" + photo.secret + ".jpg";
+                console.log(photo);
+                console.log(constructedPhoto);
+                $("#puppies").append("<img id='puppy' src='" + constructedPhoto + "'/>");
+              }
+            });
+      
+          });
+        
+        </script>
 </body>
 </html>
