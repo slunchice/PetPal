@@ -108,12 +108,12 @@ FB.getLoginStatus(function(response) {
         <!-- Event details -->
         <div class="jumbotron jumbotron-fluid">
           <div class="container">
-            <h1 class="display-4">Event #1</h1>
-            <p class="lead">Details here</p>
+            <h1 class="display-4" id="eventLogo0">Event #1</h1>
+            <p class="lead" id="eventName0">Details here</p>
             <ul>
-              <li>Detail one</li>
-              <li>Detail two</li>
-              <li>Detail three</li>
+              <li id="eventTime0">Detail one</li>
+              <li id="eventUrl0">Detail two</li>
+              <!-- <li>Detail three</li> -->
             </ul>
           </div>
         </div>
@@ -134,11 +134,11 @@ FB.getLoginStatus(function(response) {
         <!-- Event details -->
         <div class="jumbotron jumbotron-fluid">
           <div class="container">
-            <h1 class="display-4">Event #2</h1>
-            <p class="lead">Some more details here</p>
+            <h1 class="display-4" id="eventLogo1">Event #2</h1>
+            <p class="lead" id="eventName1">Some more details here</p>
             <ul>
-                <li>Detail one</li>
-                <li>Detail two</li>
+                <li id="eventTime1">Detail one</li>
+                <li id="eventUrl1">Detail two</li>
                 <li>Detail three</li>
               </ul>
           </div>
@@ -160,11 +160,11 @@ FB.getLoginStatus(function(response) {
         <!-- Event details -->
         <div class="jumbotron jumbotron-fluid">
           <div class="container">
-            <h1 class="display-4">Event #3</h1>
-            <p class="lead">Even more details here</p>
+            <h1 class="display-4" id="eventLogo2">Event #3</h1>
+            <p class="lead" id="eventName2">Even more details here</p>
             <ul>
-                <li>Detail one</li>
-                <li>Detail two</li>
+                <li id="eventTime2">Detail one</li>
+                <li id="eventUrl2">Detail two</li>
                 <li>Detail three</li>
               </ul>
           </div>
@@ -321,7 +321,12 @@ FB.getLoginStatus(function(response) {
       
             $.get(url + token + query, function(res) {
               if (res.events.length) {
-                for (var i = 0; i < res.events.length; i++) {
+                for (var i = 0; i < 3; i++) {
+                  var event = res.events[i];
+                  var eventLogo = event.logo.url;
+                  var eventName = event.name.html;
+                  var eventTime = event.start.local;
+                  var eventUrl = event.url;
                   console.log(res.events[i]);
                 }
               }
