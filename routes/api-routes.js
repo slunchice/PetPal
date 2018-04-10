@@ -1,7 +1,23 @@
+// importing `models` folder in order to use Sequelize models for Owner and Pet tables
+var db = require("../models")
+
 module.exports = function(app) {
-    // change to different route when we've created one
-    // app.get("/", function(req, res) {
-    //     res.sendFile(path.join(__dirname, "home.html"));
-    //   });
+
+ 
+
+    app.post("/api/owner", function(req, res) {
+        console.log(req.body);
+     
+        db.Owner.create({
+          name: req.body.name,
+          age: req.body.age,
+          gender: req.body.gender,
+          location: req.body.location
+        }).then(function(dbOwner) {
+          
+          res.json(dbOwner);
+        });
+      });
+
 }
 
