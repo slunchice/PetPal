@@ -13,16 +13,12 @@
   <link rel="shortcut icon" type="image/png" href="../images/favicon.png"/>
   <link href="https://fonts.googleapis.com/css?family=Domine" rel="stylesheet">
   <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-  <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-    crossorigin="anonymous"></script> -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
     integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
     crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
     integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
     crossorigin="anonymous"></script>
-  <script src="../js/main.js"></script>
   <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
   <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase-auth.js"></script>
@@ -30,6 +26,8 @@
 </head>
 
 <body>
+
+
 
 <!-- Modal -->
 <div class="modal fade" id="facebookLoginModal" tabindex="1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="false">
@@ -150,267 +148,88 @@
     </a>
   </div>
 
-  <!-- Carousel #2 -->
-  <div id="carousel2" class="carousel slide" data-ride="carousel">
-      <ol class="carousel-indicators">
-        <li data-target="#carousel2" data-slide-to="0" class="active"></li>
-        <li data-target="#carousel2" data-slide-to="1" class="active"></li>
-        <li data-target="#carousel2" data-slide-to="2" class="active"></li>
-      </ol>
-      <!-- Contents -->
-      <div class="carousel-inner">
-        <!-- First item -->
-        <div class="carousel-item active">
-          <!-- Event details -->
-          <div class="jumbotron jumbotron-fluid">
-            <div class="container">
-              <h1 class="display-4">Group #1</h1>
-              <p class="lead">Details here</p>
-              <ul>
-                <li>Detail one</li>
-                <li>Detail two</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <!-- Second item -->
-        <div class="carousel-item">
-          <!-- Event details -->
-          <div class="jumbotron jumbotron-fluid">
-            <div class="container">
-              <h1 class="display-4">Group #2</h1>
-              <p class="lead">Some more details here</p>
-              <ul>
-                  <li>Detail one</li>
-                  <li>Detail two</li>
-                </ul>
-            </div>
-          </div>
-        </div>
-        <!-- Third item -->
-        <div class="carousel-item">
-          <!-- Event details -->
-          <div class="jumbotron jumbotron-fluid">
-            <div class="container">
-              <h1 class="display-4">Group #3</h1>
-              <p class="lead">Even more details here</p>
-              <ul>
-                  <li>Detail one</li>
-                  <li>Detail two</li>
-                </ul>
-            </div>
-          </div>
-      </div>
-      <a class="carousel-control-prev" href="#carousel2" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="carousel-control-next" href="#carousel2" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
-    </div>
-
-  <!-- Photo Booth -->
-    <div class="jumbotron jumbotron-fluid" id="photos">
-      <div class="container">
-        <p class="lead">Check out the PhotoBooth page for adorable puppy pics!</p>
-        <div id="puppies"></div>
-      </div>
-    </div>
-
-
-      <!-- Footer -->
-      <footer class="footer">
+<!-- Carousel #2 -->
+<div id="carousel2" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carousel2" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel2" data-slide-to="1" class="active"></li>
+    <li data-target="#carousel2" data-slide-to="2" class="active"></li>
+  </ol>
+  <!-- Contents -->
+  <div class="carousel-inner">
+    <!-- First item -->
+    <div class="carousel-item active">
+      <!-- Event details -->
+      <div class="jumbotron jumbotron-fluid">
         <div class="container">
-          <span class="text-muted">Copyright 2018 &copy PetPal</span>
+          <h1 class="display-4">Group #1</h1>
+          <p class="lead">Details here</p>
+          <ul>
+            <li>Detail one</li>
+            <li>Detail two</li>
+          </ul>
         </div>
+      </div>
+    </div>
+    <!-- Second item -->
+    <div class="carousel-item">
+      <!-- Event details -->
+      <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+          <h1 class="display-4">Group #2</h1>
+          <p class="lead">Some more details here</p>
+          <ul>
+            <li>Detail one</li>
+            <li>Detail two</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- Third item -->
+    <div class="carousel-item">
+      <!-- Event details -->
+      <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+          <h1 class="display-4">Group #3</h1>
+          <p class="lead">Even more details here</p>
+          <ul>
+            <li>Detail one</li>
+            <li>Detail two</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <a class="carousel-control-prev" href="#carousel2" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carousel2" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+
+<!-- Photo Booth -->
+<div class="jumbotron jumbotron-fluid" id="photos">
+  <div class="container">
+    <p class="lead">Check out the PhotoBooth page for adorable puppy pics!</p>
+    <div id="puppies"></div>
+  </div>
+</div>
+
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <span class="text-muted">Copyright 2018 &copy PetPal</span>
+  </div>
   
-        <!-- Javascript -->
-        <script type="text/javascript">
-  
-          $(document).ready(function() {
 
-            // Initialize Firebase
-        var config = {
-            apiKey: "AIzaSyAZ5jn4Ev4oB-4Ki-5sVWWJCNqxXJraUow",
-            authDomain: "facebook-authentication-4cf4f.firebaseapp.com",
-            databaseURL: "https://facebook-authentication-4cf4f.firebaseio.com",
-            projectId: "facebook-authentication-4cf4f",
-            storageBucket: "facebook-authentication-4cf4f.appspot.com",
-            messagingSenderId: "68374070922"
-        };
-        firebase.initializeApp(config);
-        var provider = new firebase.auth.FacebookAuthProvider();
+<script src="../js/facebookLogIn.js"></script>
+<script src="../js/eventBrite.js"></script>
+<script src="../js/flickr.js"></script>
+<script src="../js/main.js"></script>
 
-        //from facebook
-        window.fbAsyncInit = function () {
-            FB.init({
-                appId: '2000417906887093',
-                cookie: true,
-                xfbml: true,
-                version: 'v2.12'
-            });
-
-            FB.getLoginStatus(function (response) {
-                statusChangeCallback(response);
-            });
-        };
-
-        (function (d, s, id) {
-            var js, fjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id)) { return; }
-            js = d.createElement(s); js.id = id;
-            js.src = "https://connect.facebook.net/en_US/sdk.js";
-            fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));
-
-        // sign into facebook
-        // !George changed the id to match the modal button id
-        document.getElementById("facebookLogInButton").onclick = function () {
-            //firebase sign in stuff
-            firebase.auth().signInWithPopup(provider).then(function (result) {
-                // This gives you a Facebook Access Token. You can use it to access the Facebook API.
-                var token = result.credential.accessToken;
-                // The signed-in user info.
-                var user = result.user;
-                // ...
-
-                // !George commented out these lines for testing
-                // console.log("hi, " + user.displayName);
-                // console.log(user);
-                // console.log("the user facebook token is " + token);
-
-                // George's added code starts here
-                // ...
-                console.log(result);
-                var profile = result.additionalUserInfo.profile;
-                console.log(profile);
-
-                var newUser = {
-                  firstName: profile.first_name,
-                  lastName: profile.last_name,
-                  age: profile.age_range.min,
-                  gender: profile.gender,
-                  location: "Charlotte, NC",
-                  photo: profile.picture.data.url
-                }
-
-                console.log(newUser);
-
-                $("#profilePicture").html("<img id='profile picture' src='" + newUser.photo + "'/>");
-                $("#userGreeting").html("Glad to have you, " + newUser.firstName + "!");
-
-                // George's code ends here
-                // ...
-
-            }).catch(function (error) {
-                // Handle Errors here.
-                var errorCode = error.code;
-                var errorMessage = error.message;
-                // The email of the user's account used.
-                var email = error.email;
-                // The firebase.auth.AuthCredential type that was used.
-                var credential = error.credential;
-                console.log(errorCode);
-                // ...
-            });
-        }
-
-        //sign out of facebook
-        document.getElementById("facebookSignOutButton").onclick = function () {
-            firebase.auth().signOut().then(function () {
-                // Sign-out successful.
-                alert("sign out successful");
-                console.log("sign out successful");
-            }).catch(function (error) {
-                // An error happened.
-            });
-        };
-
-        function goToUserProfile(isLoggedIn) {
-            if (isLoggedIn) {
-
-            } else {
-
-            }
-        };
-
-        function statusChangeCallback(response) {
-            if (reponse.status === "connected") {
-                console.log("you are logged in");
-            } else {
-                console.log("not authenticated");
-            }
-        }
-
-        function checkLoginState() {
-            FB.getLoginStatus(function (response) {
-                statusChangeCallback(response);
-            });
-        }
-
-            // Show Facebook log-in modal
-            $("#facebookLoginModal").modal('show');
-      
-            // Variables to build GET request to EventBrite API
-            var url = "https://www.eventbriteapi.com/v3/events/search/?token=";
-            var token = "B67FCSUCKZGEB7QG7FI2";
-            var query = "&q=dogs&location.address=charlotte";
-      
-            // Service call to EventBrite API
-            $.get(url + token + query, function(res) {
-              if (res.events.length) {
-                for (var i = 0; i < 3; i++) {
-                  var event = res.events[i];
-                  // Creates newEvent object with each return object in for loop
-                  var newEvent = {
-                    logo: event.logo.url,
-                    name: event.name.html,
-                    time: event.start.local,
-                    url: event.url
-                  }
-                  // Appends each newEvent object to respective DOM elements
-                  $("#eventLogo" + i + "").html("<img id='logo' src='" + newEvent.logo + "'/>");
-                  $("#eventName" + i + "").html(newEvent.name);
-                  $("#eventTime" + i + "").html(newEvent.time);
-                  var string = "Click here for more details!";
-                  var result = string.link("" + newEvent.url + "");
-                  $("#eventUrl" + i + "").html(result);
-                }
-              }
-            });
-
-
-            // Variables to build GET request to Flickr API
-            var flickrUrl = "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=";
-            var flickrKey = "98dbf6130422af315be78a1803dec6e1";
-            var flickrTag = "&tags=puppy";
-            var flickrFormatJSON = "&format=json&nojsoncallback=1";
-            // var flickrAuthToken = "&auth_token=72157693720521961-1755b57971270204";
-            // var flickrApiSig = "&api_sig=850fbd3cad60d728653c8f366c07eb53";
-
-            // Service call to Flickr API
-            $.get(flickrUrl + flickrKey + flickrTag + flickrFormatJSON, function(res) {
-              // console.log(res);
-              for (var i = 0; i < 10; i++) {
-                var photo = res.photos.photo[i];
-                var constructedPhoto = "https://farm" + photo.farm + ".staticflickr.com/" + photo.server + "/" + photo.id + "_" + photo.secret + ".jpg";
-                // console.log(photo);
-                // console.log(constructedPhoto);
-                $("#puppies").append("<img id='puppy' src='" + constructedPhoto + "'/>");
-              }
-            });
-
-            var meetUpUrl = "https://api.meetup.com/topics?offset=0&api_key=421a670147f187dd2762c5f53420&format=json&search=pets%2C+dogs&photo-host=public&page=20&order=members&sig_id=245834012&sig=3e9bb81d7285448cb641cb0f2017c2f7616ffaa5";
-            var meetUpKey = "421a670147f187dd2762c5f53420";
-
-            $.get(meetUpUrl, function(res) {
-              console.log(res);
-            });
-      
-          });
-        
-        </script>
 </body>
 </html>
