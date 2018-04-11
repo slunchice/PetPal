@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>New Pet Profile</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- Link static CSS -->
+    <!-- <link rel="stylesheet" type="text/css" href="/style.css"> -->
+    <link href="https://fonts.googleapis.com/css?family=Baloo|Roboto" rel="stylesheet">
+</head>
+<body>
+    <div class="container content">
+        <h1>Build a New Pet Profile</h1>
+        <p>Please provide the following information about your pet so we create their PetPal Profile:</p>
+        <hr>
+        <form>
+            <!--Name-->
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input id="name" type="text" class="form-control" placeholder="Name">
+            </div>
+            <!--Age-->
+            <div class="form-group">
+                <label for="age">Age</label>
+                <select class="form-control" id="age">
+                    <option value="empty"></option>
+                    <option value="1">Under 12 months</option>
+                    <option value="2">1</option>
+                    <option value="3">2</option>
+                    <option value="4">3</option>
+                    <option value="5">4</option>
+                    <option value="6">5</option>
+                    <option value="7">6</option>
+                    <option value="8">7</option>
+                    <option value="9">8</option>
+                    <option value="10">9</option>
+                    <option value="11">10</option>
+                    <option value="12">11</option>
+                    <option value="13">12</option>
+                    <option value="14">Over 12 years</option>
+                </select>
+            </div>
+            <!--Gender-->
+            <div class="form-group">
+                <label for="gender">Gender</label>
+                <select class="form-control" id="gender">
+                    <option value="empty"></option>
+                    <option value="1">Male</option>
+                    <option value="2">Female</option>
+                </select>
+            </div>
+            <!--Size-->
+            <div class="form-group">
+                <label for="size">Size</label>
+                <select class="form-control" id="size">
+                    <option value="empty"></option>
+                    <option value="1">XS (<5 lbs)</option>
+                    <option value="2">S (5-15 lbs)</option>
+                    <option value="3">M (15-40 lbs)</option>
+                    <option value="4">L (40-75 lbs)</option>
+                    <option value="5">XL (>75 lbs)</option>
+                </select>
+            </div>
+            <!--Breed-->
+            <div class="form-group">
+                    <label for="breed">Breed</label>
+                    <input id="breed" type="text" class="form-control" placeholder="Breed">
+                </div>    
+            <!--Bio-->
+            <div class="form-group">
+                <label for="bio">Bio</label>
+                <textarea class="form-control" id="bio" rows="3" placeholder="Write a brief bio for your pet..."></textarea>
+            </div>
+        </form>
+        <!--Submit Button-->
+        <div class="text-center">
+            <button id="submitBtn" type="submit" class="btn btn-success btn-lg">Submit</button>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+            crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+</html>
+<script type="text/javascript">
+    $("#submitBtn").on("click", function (event) {
+        event.preventDefault();
+        // Form validation
+        var valid = true;
+        if ($("#name").val() === "") {
+            valid = false;
+        } else if ($("#name").val() === "empty" || $("#age").val() === "empty" || $("#gender").val() === "empty" || $("#size").val() === "empty" || $("#breed").val() === "empty" || $("#bio").val() === "empty") {
+            valid = false;
+        }
+        if (valid === true) {
+            var newPet = {
+                name: $("#name").val().trim(),
+                scores: [
+                    $("#name").val(),
+                    $("#age").val(),
+                    $("#gender").val(),
+                    $("#size").val(),
+                    $("#breed").val(),
+                    $("#bio").val(),
+                ],
+                bio: $("#bio").val().trim(),
+            };
+</script>
