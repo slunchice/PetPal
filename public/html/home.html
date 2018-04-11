@@ -24,6 +24,8 @@
     crossorigin="anonymous"></script>
   <script src="../js/main.js"></script>
   <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase-auth.js"></script>
   
 </head>
 
@@ -62,6 +64,27 @@ FB.getLoginStatus(function(response) {
 
 <!-- </script> -->
 
+<!-- Modal -->
+<div class="modal fade" id="facebookLoginModal" tabindex="1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="false">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Welcome to PetPal!</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Please log-in with Facebook.
+      </div>
+      <div class="modal-footer">
+        <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+        <button type="button" class="btn btn-primary" id="facebookLoginButton">Log-in to Facebook</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-light header" id="myHeader">
@@ -72,7 +95,7 @@ FB.getLoginStatus(function(response) {
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav" id="navitems">
         <li class="nav-item active">
-          <a class="nav-link" href="/html/home.html" id="home">Home <span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="./home.html" id="home">Home <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -317,6 +340,103 @@ FB.getLoginStatus(function(response) {
         <script type="text/javascript">
   
           $(document).ready(function() {
+
+            // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyAZ5jn4Ev4oB-4Ki-5sVWWJCNqxXJraUow",
+            authDomain: "facebook-authentication-4cf4f.firebaseapp.com",
+            databaseURL: "https://facebook-authentication-4cf4f.firebaseio.com",
+            projectId: "facebook-authentication-4cf4f",
+            storageBucket: "facebook-authentication-4cf4f.appspot.com",
+            messagingSenderId: "68374070922"
+        };
+        firebase.initializeApp(config);
+        var provider = new firebase.auth.FacebookAuthProvider();
+
+        //from facebook
+        window.fbAsyncInit = function () {
+            FB.init({
+                appId: '2000417906887093',
+                cookie: true,
+                xfbml: true,
+                version: 'v2.12'
+            });
+
+            FB.getLoginStatus(function (response) {
+                statusChangeCallback(response);
+            });
+        };
+
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) { return; }
+            js = d.createElement(s); js.id = id;
+            js.src = "https://connect.facebook.net/en_US/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+
+        // sign into facebook
+        document.getElementById("facebookLoginButton").onclick = function () {
+            //firebase sign in stuff
+            firebase.auth().signInWithPopup(provider).then(function (result) {
+                // This gives you a Facebook Access Token. You can use it to access the Facebook API.
+                var token = result.credential.accessToken;
+                // The signed-in user info.
+                var user = result.user;
+                // ...
+                console.log("hi, " + user.displayName);
+                console.log(user);
+                console.log("the user facebook token is " + token);
+
+
+            }).catch(function (error) {
+                // Handle Errors here.
+                var errorCode = error.code;
+                var errorMessage = error.message;
+                // The email of the user's account used.
+                var email = error.email;
+                // The firebase.auth.AuthCredential type that was used.
+                var credential = error.credential;
+                console.log(errorCode);
+                // ...
+            });
+        }
+
+        //sign out of facebook
+        // document.getElementById("signOut").onclick = function () {
+        //     firebase.auth().signOut().then(function () {
+        //         // Sign-out successful.
+        //         alert("sign out successful");
+        //         console.log("sign out successful");
+        //     }).catch(function (error) {
+        //         // An error happened.
+        //     });
+        // };
+
+        function goToUserProfile(isLoggedIn) {
+            if (isLoggedIn) {
+
+            } else {
+
+            }
+        };
+
+        function statusChangeCallback(response) {
+            if (reponse.status === "connected") {
+                console.log("you are logged in");
+            } else {
+                console.log("not authenticated");
+            }
+        }
+
+        function checkLoginState() {
+            FB.getLoginStatus(function (response) {
+                statusChangeCallback(response);
+            });
+        }
+
+            // Show Facebook log-in modal
+            $("#facebookLoginModal").modal('show');
       
             // Variables to build AJAX request to EventBrite API
             var url = "https://www.eventbriteapi.com/v3/events/search/?token=";
