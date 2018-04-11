@@ -55,19 +55,28 @@ document.getElementById("facebookLogInButton").onclick = function () {
     console.log(profile);
   
     var newUser = {
-      firstName: profile.first_name,
-      lastName: profile.last_name,
+      name: profile.name,
       age: profile.age_range.min,
       gender: profile.gender,
       location: "Charlotte, NC",
-      photo: profile.picture.data.url
     }
   
     console.log(newUser);
+<<<<<<< HEAD
+
+    $.post("/api/owner", newUser)
+      .then(function(data) {
+        console.log(data);
+      });
+  
+    // $("#profilePicture").html("<img id='profile picture' src='" + newUser.photo + "'/>");
+    // $("#userGreeting").html("Glad to have you, " + newUser.firstName + "!");
+=======
   
     $("#profilePicture").html("<img id='profile picture' src='" + newUser.photo + "'/>");
     $("#userGreeting").html("Glad to have you, " + newUser.firstName + "!");
 
+>>>>>>> db003cecf07bd0ae13acf2a5b79b5e2b34ba90df
   
     // George's code ends here
     // ...
