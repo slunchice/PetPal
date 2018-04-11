@@ -75,7 +75,8 @@ FB.getLoginStatus(function(response) {
         </button>
       </div>
       <div class="modal-body">
-        Please log-in with Facebook.
+        <div id="profilePicture"></div>
+        <p id="greeting">Please log-in with Facebook.</p>
       </div>
       <div class="modal-footer">
         <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
@@ -376,6 +377,7 @@ FB.getLoginStatus(function(response) {
         }(document, 'script', 'facebook-jssdk'));
 
         // sign into facebook
+        // !George changed the id to match the modal button id
         document.getElementById("facebookLoginButton").onclick = function () {
             //firebase sign in stuff
             firebase.auth().signInWithPopup(provider).then(function (result) {
@@ -384,10 +386,32 @@ FB.getLoginStatus(function(response) {
                 // The signed-in user info.
                 var user = result.user;
                 // ...
-                console.log("hi, " + user.displayName);
-                console.log(user);
-                console.log("the user facebook token is " + token);
 
+                // !George commented out these lines for testing
+                // console.log("hi, " + user.displayName);
+                // console.log(user);
+                // console.log("the user facebook token is " + token);
+
+                // George's added code starts here
+                console.log(result);
+                var profile = result.additionalUserInfo.profile;
+                console.log(profile);
+
+                var newUser = {
+                  firstName: profile.first_name,
+                  lastName: profile.last_name,
+                  age: profile.age_range.min,
+                  gender: profile.gender,
+                  location: "Charlotte, NC",
+                  photo: profile.picture.data.url
+                }
+
+                console.log(newUser);
+
+                $("#profilePicture").html("<img id='profile picture' src='" + newUser.photo + "'/>");
+                $("#greeting").html("Glad to have you, " + newUser.firstName + "!");
+
+                
 
             }).catch(function (error) {
                 // Handle Errors here.
