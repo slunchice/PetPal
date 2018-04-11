@@ -3,10 +3,9 @@ var db = require("../models")
 
 module.exports = function(app) {
 
- 
 
     app.post("/api/owner", function(req, res) {
-        console.log(req.body);
+        console.log(req);
      
         db.Owner.create({
           name: req.body.name,
