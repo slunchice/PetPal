@@ -196,6 +196,12 @@ textarea:focus, input:focus{
   width: 100px;
 }
 
+.logo-display {
+  margin-bottom: 20px;
+  width: 40%;
+
+}
+
 .loginDiv{
   text-align: center;
   margin-top: 10px;
@@ -249,6 +255,11 @@ textarea:focus, input:focus{
   padding: 20px;
 }
 
+.puppy-photos {
+  border: 2px solid black;
+  border-radius: 20px;
+  margin: 10px;
+  
 /* George added styling below */
 /* ... */
 
@@ -262,4 +273,8 @@ textarea:focus, input:focus{
 
 #userGreeting {
   text-align: center;
+}
+
+.form-style{
+  margin: 20px;
 }
