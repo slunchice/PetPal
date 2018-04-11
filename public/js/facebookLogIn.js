@@ -67,6 +67,7 @@ document.getElementById("facebookLogInButton").onclick = function () {
   
     $("#profilePicture").html("<img id='profile picture' src='" + newUser.photo + "'/>");
     $("#userGreeting").html("Glad to have you, " + newUser.firstName + "!");
+
   
     // George's code ends here
     // ...
@@ -88,22 +89,26 @@ document.getElementById("facebookLogInButton").onclick = function () {
 document.getElementById("facebookSignOutButton").onclick = function () {
   firebase.auth().signOut().then(function () {
     // Sign-out successful.
-    alert("sign out successful");
+    // alert("sign out successful");
+    $("#profilePicture").html("You have signed out");
+    $("#userGreeting").html("come back soon!");
     console.log("sign out successful");
+
   }).catch(function (error) {
     // An error happened.
   });
 };
   
-function goToUserProfile(isLoggedIn) {
-  if (isLoggedIn) {
+// function goToUserProfile(isLoggedIn) {
+//   if (isLoggedIn) {
   
-  } else {
+//   } else {
   
-  }
-};
+//   }  
+// };
   
 function statusChangeCallback(response) {
+  console.log(response);
   if (reponse.status === "connected") {
     console.log("you are logged in");
   } else {
