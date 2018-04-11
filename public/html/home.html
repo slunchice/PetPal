@@ -221,74 +221,78 @@
 <!-- =================== Modals =================== -->
 
 <!-- Pet Profile -->
-<div class="container content">
-  <h1>Build a New Pet Profile</h1>
-  <p>Please provide the following information about your pet so we create their PetPal Profile:</p>
-  <hr>
-  <form>
-      <!--Name-->
-      <div class="form-group">
-          <label for="name">Name</label>
-          <input id="name" type="text" class="form-control" placeholder="Name">
+<div class="jumbotron jumbotron-fluid spacing">
+    <div class="container">
+      <div class="container content">
+          <h1>Build a New Pet Profile</h1>
+          <p>Please provide the following information about your pet so we create their PetPal Profile:</p>
+          <hr>
+          <form>
+              <!--Name-->
+              <div class="form-group form-style">
+                  <label for="name">Name</label>
+                  <input id="name" type="text" class="form-control" placeholder="Name">
+              </div>
+              <!--Age-->
+              <div class="form-group form-style">
+                  <label for="age">Age</label>
+                  <select class="form-control" id="age">
+                      <option value="empty"></option>
+                      <option value="1">Under 12 months</option>
+                      <option value="2">1</option>
+                      <option value="3">2</option>
+                      <option value="4">3</option>
+                      <option value="5">4</option>
+                      <option value="6">5</option>
+                      <option value="7">6</option>
+                      <option value="8">7</option>
+                      <option value="9">8</option>
+                      <option value="10">9</option>
+                      <option value="11">10</option>
+                      <option value="12">11</option>
+                      <option value="13">12</option>
+                      <option value="14">Over 12 years</option>
+                  </select>
+              </div>
+              <!--Gender-->
+              <div class="form-group form-style">
+                  <label for="gender">Gender</label>
+                  <select class="form-control" id="gender">
+                      <option value="empty"></option>
+                      <option value="1">Male</option>
+                      <option value="2">Female</option>
+                  </select>
+              </div>
+              <!--Size-->
+              <div class="form-group form-style">
+                  <label for="size">Size</label>
+                  <select class="form-control" id="size">
+                      <option value="empty"></option>
+                      <option value="1">XS (<5 lbs)</option>
+                      <option value="2">S (5-15 lbs)</option>
+                      <option value="3">M (15-40 lbs)</option>
+                      <option value="4">L (40-75 lbs)</option>
+                      <option value="5">XL (>75 lbs)</option>
+                  </select>
+              </div>
+              <!--Breed-->
+              <div class="form-group form-style">
+                      <label for="breed">Breed</label>
+                      <input id="breed" type="text" class="form-control" placeholder="Breed">
+                  </div>    
+              <!--Bio-->
+              <div class="form-group form-style">
+                  <label for="bio">Bio</label>
+                  <textarea class="form-control" id="bio" rows="3" placeholder="Write a brief bio for your pet..."></textarea>
+              </div>
+          </form>
+          <!--Submit Button-->
+          <div class="text-center">
+              <button id="submitBtn" type="submit" class="btn btn-success btn-lg">Submit</button>
+          </div>
       </div>
-      <!--Age-->
-      <div class="form-group">
-          <label for="age">Age</label>
-          <select class="form-control" id="age">
-              <option value="empty"></option>
-              <option value="1">Under 12 months</option>
-              <option value="2">1</option>
-              <option value="3">2</option>
-              <option value="4">3</option>
-              <option value="5">4</option>
-              <option value="6">5</option>
-              <option value="7">6</option>
-              <option value="8">7</option>
-              <option value="9">8</option>
-              <option value="10">9</option>
-              <option value="11">10</option>
-              <option value="12">11</option>
-              <option value="13">12</option>
-              <option value="14">Over 12 years</option>
-          </select>
-      </div>
-      <!--Gender-->
-      <div class="form-group">
-          <label for="gender">Gender</label>
-          <select class="form-control" id="gender">
-              <option value="empty"></option>
-              <option value="1">Male</option>
-              <option value="2">Female</option>
-          </select>
-      </div>
-      <!--Size-->
-      <div class="form-group">
-          <label for="size">Size</label>
-          <select class="form-control" id="size">
-              <option value="empty"></option>
-              <option value="1">XS (<5 lbs)</option>
-              <option value="2">S (5-15 lbs)</option>
-              <option value="3">M (15-40 lbs)</option>
-              <option value="4">L (40-75 lbs)</option>
-              <option value="5">XL (>75 lbs)</option>
-          </select>
-      </div>
-      <!--Breed-->
-      <div class="form-group">
-              <label for="breed">Breed</label>
-              <input id="breed" type="text" class="form-control" placeholder="Breed">
-          </div>    
-      <!--Bio-->
-      <div class="form-group">
-          <label for="bio">Bio</label>
-          <textarea class="form-control" id="bio" rows="3" placeholder="Write a brief bio for your pet..."></textarea>
-      </div>
-  </form>
-  <!--Submit Button-->
-  <div class="text-center">
-      <button id="submitBtn" type="submit" class="btn btn-success btn-lg">Submit</button>
+    </div>
   </div>
-
 <!-- Footer -->
 <footer class="footer">
   <div class="container">

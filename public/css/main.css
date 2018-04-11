@@ -274,3 +274,7 @@ textarea:focus, input:focus{
 #userGreeting {
   text-align: center;
 }
+
+.form-style{
+  margin: 20px;
+}
