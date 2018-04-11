@@ -260,4 +260,17 @@ textarea:focus, input:focus{
   border-radius: 20px;
   margin: 10px;
   
+/* George added styling below */
+/* ... */
+
+#mainGreeting {
+  text-align: center;
+}
+
+#profilePicture {
+  text-align: center;
+}
+
+#userGreeting {
+  text-align: center;
 }
