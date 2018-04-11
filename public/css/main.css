@@ -196,14 +196,12 @@ textarea:focus, input:focus{
   width: 100px;
 }
 
-<<<<<<< HEAD
 .logo-display {
   margin-bottom: 20px;
   width: 40%;
 
 }
 
-=======
 .loginDiv{
   text-align: center;
   margin-top: 10px;
@@ -224,7 +222,6 @@ textarea:focus, input:focus{
   width: 600px;
   height: 300px;
 }
->>>>>>> 95e0635a776ce462746b4a7030b68b02cd1fa2e7
 /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 600px) {
   .col-25, .col-75, .jumbotron, input[type=submit] {
@@ -256,4 +253,11 @@ textarea:focus, input:focus{
   border: 2px solid;
   margin: 20px;
   padding: 20px;
+}
+
+.puppy-photos {
+  border: 2px solid black;
+  border-radius: 20px;
+  margin: 10px;
+  
 }

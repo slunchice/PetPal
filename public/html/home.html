@@ -355,7 +355,7 @@ FB.getLoginStatus(function(response) {
                 var constructedPhoto = "https://farm" + photo.farm + ".staticflickr.com/" + photo.server + "/" + photo.id + "_" + photo.secret + ".jpg";
                 console.log(photo);
                 console.log(constructedPhoto);
-                $("#puppies").append("<img id='puppy' src='" + constructedPhoto + "'/>");
+                $("#puppies").append("<img id='puppy' class='puppy-photos img-responsive' src='" + constructedPhoto + "'/>");
               }
             });
       

@@ -5,9 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<<<<<<< HEAD
-    <link rel="stylesheet" type="text/css" media="screen" href="/public/css/main.css" />
-=======
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
         crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" medi a="screen" href="../public/css/main.css" />
@@ -24,185 +21,10 @@
     <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase-auth.js"></script>
 
->>>>>>> 95e0635a776ce462746b4a7030b68b02cd1fa2e7
     <title>Document</title>
 </head>
 
 <body>
-<<<<<<< HEAD
-        <div id="fb-root">
-        </div>
-        <script>(function(d, s, id) {
-          var js, fjs = d.getElementsByTagName(s)[0];
-          if (d.getElementById(id)) return;
-          js = d.createElement(s); js.id = id;
-          js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.12&appId=2000417906887093&autoLogAppEvents=1';
-          fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));</script>
-
-
-        <div class="fb-login-button" data-width="200" data-max-rows="1" data-size="large" data-button-type="login_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="true">login with facebook</div>
-
-
-
-        
-        <!-- START -->
-        <!DOCTYPE html>
-        <html lang="en">
-        
-        <head>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <meta http-equiv="X-UA-Compatible" content="ie=edge">
-            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-                crossorigin="anonymous">
-            <link rel="stylesheet" type="text/css" medi a="screen" href="../public/css/main.css" />
-            <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-                crossorigin="anonymous"></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-                crossorigin="anonymous"></script>
-            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-                crossorigin="anonymous"></script>
-            <script src="../js/main.js"></script>
-            <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
-        
-            <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
-            <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase-app.js"></script>
-            <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase-auth.js"></script>
-        
-            <title>Document</title>
-        </head>
-        
-        <body>
-        
-            <script>
-                // Initialize Firebase
-                var config = {
-                    apiKey: "AIzaSyAZ5jn4Ev4oB-4Ki-5sVWWJCNqxXJraUow",
-                    authDomain: "facebook-authentication-4cf4f.firebaseapp.com",
-                    databaseURL: "https://facebook-authentication-4cf4f.firebaseio.com",
-                    projectId: "facebook-authentication-4cf4f",
-                    storageBucket: "facebook-authentication-4cf4f.appspot.com",
-                    messagingSenderId: "68374070922"
-                };
-                firebase.initializeApp(config);
-                var provider = new firebase.auth.FacebookAuthProvider();
-        
-                //from facebook
-                window.fbAsyncInit = function () {
-                    FB.init({
-                        appId: '2000417906887093',
-                        cookie: true,
-                        xfbml: true,
-                        version: 'v2.12'
-                    });
-        
-                    FB.getLoginStatus(function (response) {
-                        statusChangeCallback(response);
-                    });
-                };
-        
-                (function (d, s, id) {
-                    var js, fjs = d.getElementsByTagName(s)[0];
-                    if (d.getElementById(id)) { return; }
-                    js = d.createElement(s); js.id = id;
-                    js.src = "https://connect.facebook.net/en_US/sdk.js";
-                    fjs.parentNode.insertBefore(js, fjs);
-                }(document, 'script', 'facebook-jssdk'));
-        
-                // sign into facebook
-                document.getElementById("signIn").onclick = function () {
-                    //firebase sign in stuff
-                    firebase.auth().signInWithPopup(provider).then(function (result) {
-                        // This gives you a Facebook Access Token. You can use it to access the Facebook API.
-                        var token = result.credential.accessToken;
-                        // The signed-in user info.
-                        var user = result.user;
-                        // ...
-                        console.log("hi, " + user.displayName);
-                        console.log(user);
-                        console.log("the user facebook token is " + token);
-        
-        
-                    }).catch(function (error) {
-                        // Handle Errors here.
-                        var errorCode = error.code;
-                        var errorMessage = error.message;
-                        // The email of the user's account used.
-                        var email = error.email;
-                        // The firebase.auth.AuthCredential type that was used.
-                        var credential = error.credential;
-                        console.log(errorCode);
-                        // ...
-                    });
-                }
-        
-                //sign out of facebook
-                document.getElementById("signOut").onclick = function () {
-                    firebase.auth().signOut().then(function () {
-                        // Sign-out successful.
-                        alert("sign out successful");
-                        console.log("sign out successful");
-                    }).catch(function (error) {
-                        // An error happened.
-                    });
-                };
-        
-                function goToUserProfile(isLoggedIn) {
-                    if (isLoggedIn) {
-        
-                    } else {
-        
-                    }
-                };
-        
-                function statusChangeCallback(response) {
-                    if (reponse.status === "connected") {
-                        console.log("you are logged in");
-                    } else {
-                        console.log("not authenticated");
-                    }
-                }
-        
-                function checkLoginState() {
-                    FB.getLoginStatus(function (response) {
-                        statusChangeCallback(response);
-                    });
-                }
-        
-            </script>
-        
-        <!-- 
-            <div class="loginDiv">
-        
-                <img class="loginLogo" src="../public/images/logo.png" class="logo">
-                <br>
-        
-                <button id="signIn">Login with Facebook</button>
-                <button id="signOut">Sign Out</button>
-            </div>
-          -->
-              <!-- Contact Section -->
-  <div class="jumbotron jumbotron-fluid spacing">
-      <div class="container">
-        <div class = "row">
-          <div class ="col-lg-12">
-              <button class = "btn" id="signIn">Login with Facebook</button>
-              <button class = "btn" id="signOut">Sign Out</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-        </body>
-        
-        </html>
-        <!--  END  -->
-
-
-      </body>
-</html>
-=======
 
     <script>
         // Initialize Firebase
@@ -313,4 +135,3 @@
 </body>
 
 </html>
->>>>>>> 95e0635a776ce462746b4a7030b68b02cd1fa2e7
