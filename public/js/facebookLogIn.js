@@ -118,7 +118,7 @@ document.getElementById("facebookSignOutButton").onclick = function () {
   
 function statusChangeCallback(response) {
   console.log(response);
-  if (reponse.status === "connected") {
+  if (response.status === "connected") {
     console.log("you are logged in");
   } else {
     console.log("not authenticated");
