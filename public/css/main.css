@@ -262,7 +262,8 @@ textarea:focus, input:focus{
   border: 2px solid black;
   border-radius: 20px;
   margin: 10px;
-  
+}
+
 /* George added styling below */
 /* ... */
 
@@ -277,7 +278,31 @@ textarea:focus, input:focus{
 #userGreeting {
   text-align: center;
 }
-<<<<<<< HEAD
+
+.event-img-box {
+  width: 100%;
+  border: 2px solid grey;
+}
+
+.event-img {
+
+}
+
+.event-btn {
+ margin-top: 30px;
+}
+
+.ind-event {
+  margin: 20px;
+}
+
+#events-title {
+  margin-top: -20px;
+}
+
+#event-btn {
+  width: 60%;
+}
 
 .form-style{
   margin: 20px;
@@ -287,5 +312,3 @@ textarea:focus, input:focus{
   margin-left: 60px;
   margin-right: 60px;
 }
-=======
->>>>>>> dafe0a1f1d3b5e21506c05ebd4617ce719b751b3
