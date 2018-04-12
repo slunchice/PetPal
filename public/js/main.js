@@ -21,4 +21,5 @@ $("#submitBtn").on("click", function (event) {
           ],
           bio: $("#bio").val().trim(),
       }
-    });
+    }
+});
