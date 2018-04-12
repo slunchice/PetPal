@@ -24,6 +24,9 @@
   margin-top: 20px;
 }
 
+#carousel2 {
+}
+
 body {
   font-family: 'Domine', serif;
   background-image: url("../images/background.jpg");
@@ -196,6 +199,12 @@ textarea:focus, input:focus{
   width: 100px;
 }
 
+.logo-display {
+  margin-bottom: 20px;
+  width: 40%;
+
+}
+
 .loginDiv{
   text-align: center;
   margin-top: 10px;
@@ -249,6 +258,12 @@ textarea:focus, input:focus{
   padding: 20px;
 }
 
+.puppy-photos {
+  border: 2px solid black;
+  border-radius: 20px;
+  margin: 10px;
+}
+
 /* George added styling below */
 /* ... */
 
@@ -262,4 +277,38 @@ textarea:focus, input:focus{
 
 #userGreeting {
   text-align: center;
+}
+
+.event-img-box {
+  width: 100%;
+  border: 2px solid grey;
+}
+
+.event-img {
+
+}
+
+.event-btn {
+ margin-top: 30px;
+}
+
+.ind-event {
+  margin: 20px;
+}
+
+#events-title {
+  margin-top: -20px;
+}
+
+#event-btn {
+  width: 60%;
+}
+
+.form-style{
+  margin: 20px;
+}
+
+#ppp {
+  margin-left: 60px;
+  margin-right: 60px;
 }
