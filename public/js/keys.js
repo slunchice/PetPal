@@ -7,7 +7,8 @@ exports.eventbrite = {
 
 // Facebook key
 exports.facebook = {
-    apiKey: process.env.FACEBOOK_KEY
+    apiKey: process.env.FACEBOOK_KEY,
+    messagingSenderId: process.env.FACEBOOK_MESSAGINGSENDERID
 }
 
 // Flickr key 
