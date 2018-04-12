@@ -33,6 +33,5 @@ $ git clone https://github.com/slunchice/PetPal
 $ cd PetPal
 ##### Install dependencies
 $ npm install
-##### Run the app
-$ npm start
+
 
