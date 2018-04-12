@@ -65,7 +65,10 @@ document.getElementById("facebookLogInButton").onclick = function () {
       location: "Charlotte, NC",
     }
   
-    // console.log(newUser);
+    $.post("/api/owner", newUser)
+      .then(function(data) {
+        console.log(data);
+      });
   
     $("#profilePicture").html("<img id='profile picture' src='" + newUser.photo + "'/>");
     $("#userGreeting").html("Glad to have you, " + newUser.firstName + "!");

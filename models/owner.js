@@ -5,78 +5,41 @@ module.exports = function(sequelize, DataTypes) {
       first_name: {
           type: DataTypes.STRING,
           allowNull: false
-        // validating length of input, no external url links, and no special characters except - or '
-          // validate: {
-          //   len: [1, 255],
-          //   isUrl: false,
-          //   is: ["^[a-z-']+$",'i']
-          // }
       },
       last_name: {
         type: DataTypes.STRING,
         allowNull: false
-      // validating length of input, no external url links, and no special characters except - or '
-        // validate: {
-        //   len: [1, 255],
-        //   isUrl: false,
-        //   is: ["^[a-z-']+$",'i']
-        // }
-    },
-    photo: {
+      },
+      photo: {
         type: DataTypes.STRING,
         allowNull: false
-      // validating length of input, no external url links, and no special characters except - or '
-        // validate: {
-        //   len: [1, 255],
-        //   isUrl: false,
-        //   is: ["^[a-z-']+$",'i']
-        // }
-    },
+      },
 
       age: {
           type: DataTypes.INTEGER,
-          allowNull: false
-          // validate: {
-          //   len: [1, 3],
-          //   isUrl: false,
-          //   // input must be an integer
-          //   isInt: true
-          // }
-          
+          allowNull: false       
       },
       gender: {
           type: DataTypes.STRING,
           allowNull: false
-          // validate: {
-          //   isUrl: false,
-          //   len: [1, 255],
-          //   // no special characters allowed
-          //   is: ["^[a-z]+$",'i']
-          // }
-          
       },
 
       location: {
           type: DataTypes.STRING,
           allowNull: false
-          // validate: {
-          //   // input must be lowercase in order to work with the 'equals: 'yes'' validation below
-          //   isLowercase: true,
-          //   // validating that user answered 'yes' to the client-side question 'Do you live in the Charlotte area?'
-          //    equals: 'yes',
-          // }
       }
 
     });
 
     Owner.associate = function(models) {
-        // Associating owners with Pet table
-        // When an owner is deleted, this will delete all their associated pets
-        Owner.hasMany(models.Pet, {
-          onDelete: "cascade"
-        });
-      };
+      // Associating owners with Pet table
+      // When an owner is deleted, this will delete all their associated pets
+      Owner.hasMany(models.Pet, {
+        onDelete: "cascade"
+      });
+    };
 
   
     return Owner;
+    
   };
