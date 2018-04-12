@@ -107,7 +107,7 @@ document.getElementById("facebookSignOutButton").onclick = function () {
   
 function statusChangeCallback(response) {
   console.log(response);
-  if (response.status === "connected") {
+  if (reponse.status === "connected") {
     console.log("you are logged in");
   } else {
     console.log("not authenticated");
@@ -122,3 +122,4 @@ function checkLoginState() {
   
 // Show Facebook log-in modal
 $("#facebookLoginModal").modal('show');
+$("#petProfile").hide();
