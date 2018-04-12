@@ -20,9 +20,9 @@ window.fbAsyncInit = function () {
   });
   
   FB.getLoginStatus(function (response) {
+    console.log(response);
     statusChangeCallback(response);
     console.log(response);
-    hideModal();
   });
 };
   
@@ -109,11 +109,9 @@ document.getElementById("facebookSignOutButton").onclick = function () {
 //   }  
 // };
 
-function hideModal(response){
+function modalStatus(response){
   if(response.status === "connected"){
     $('#facebookLoginModal').modal('hide');
-  }else{
-    $("#facebookLoginModal").modal('show');
   }
 }
 
@@ -121,8 +119,10 @@ function statusChangeCallback(response) {
   console.log(response);
   if (response.status === "connected") {
     console.log("you are logged in");
+    $("#facebookLoginModal").modal('hide');    
   } else {
     console.log("not authenticated");
+    $("#facebookLoginModal").modal('show');
   }
 }
   
@@ -133,4 +133,4 @@ function checkLoginState() {
 }
   
 // Show Facebook log-in modal
-$("#facebookLoginModal").modal('show');
+// $("#facebookLoginModal").modal('show');
