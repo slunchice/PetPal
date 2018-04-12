@@ -22,9 +22,9 @@ window.fbAsyncInit = function () {
   FB.getLoginStatus(function (response) {
     statusChangeCallback(response);
     console.log(response);
+    hideModal();
   });
 };
-//  hideModal();
   
 (function (d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
@@ -117,7 +117,7 @@ function hideModal(response){
 
 function statusChangeCallback(response) {
   console.log(response);
-  if (reponse.status === "connected") {
+  if (response.status === "connected") {
     console.log("you are logged in");
   } else {
     console.log("not authenticated");
@@ -132,4 +132,3 @@ function checkLoginState() {
   
 // Show Facebook log-in modal
 $("#facebookLoginModal").modal('show');
-$("#petProfile").hide();
