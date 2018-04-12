@@ -21,9 +21,10 @@ window.fbAsyncInit = function () {
   
   FB.getLoginStatus(function (response) {
     statusChangeCallback(response);
+    console.log(response);
   });
-  // hideModal();
 };
+//  hideModal();
   
 (function (d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
@@ -62,7 +63,7 @@ document.getElementById("facebookLogInButton").onclick = function () {
       location: "Charlotte, NC",
     }
   
-    console.log(newUser);
+    // console.log(newUser);
   
     $("#profilePicture").html("<img id='profile picture' src='" + newUser.photo + "'/>");
     $("#userGreeting").html("Glad to have you, " + newUser.firstName + "!");
@@ -106,13 +107,13 @@ document.getElementById("facebookSignOutButton").onclick = function () {
 //   }  
 // };
 
-// function hideModal(response){
-//   if(response.status === "connected"){
-//     $('#facebookLoginModal').modal('hide');
-//   }else{
-//     $("#facebookLoginModal").modal('show');
-//   }
-// }
+function hideModal(response){
+  if(response.status === "connected"){
+    $('#facebookLoginModal').modal('hide');
+  }else{
+    $("#facebookLoginModal").modal('show');
+  }
+}
 
 function statusChangeCallback(response) {
   console.log(response);
