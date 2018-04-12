@@ -21,8 +21,9 @@ window.fbAsyncInit = function () {
   
   FB.getLoginStatus(function (response) {
     statusChangeCallback(response);
+    console.log(response);
+    hideModal();
   });
-  // hideModal();
 };
   
 (function (d, s, id) {
@@ -62,7 +63,7 @@ document.getElementById("facebookLogInButton").onclick = function () {
       location: "Charlotte, NC",
     }
   
-    console.log(newUser);
+    // console.log(newUser);
   
     $("#profilePicture").html("<img id='profile picture' src='" + newUser.photo + "'/>");
     $("#userGreeting").html("Glad to have you, " + newUser.firstName + "!");
@@ -106,17 +107,17 @@ document.getElementById("facebookSignOutButton").onclick = function () {
 //   }  
 // };
 
-// function hideModal(response){
-//   if(response.status === "connected"){
-//     $('#facebookLoginModal').modal('hide');
-//   }else{
-//     $("#facebookLoginModal").modal('show');
-//   }
-// }
+function hideModal(response){
+  if(response.status === "connected"){
+    $('#facebookLoginModal').modal('hide');
+  }else{
+    $("#facebookLoginModal").modal('show');
+  }
+}
 
 function statusChangeCallback(response) {
   console.log(response);
-  if (reponse.status === "connected") {
+  if (response.status === "connected") {
     console.log("you are logged in");
   } else {
     console.log("not authenticated");
@@ -131,4 +132,3 @@ function checkLoginState() {
   
 // Show Facebook log-in modal
 $("#facebookLoginModal").modal('show');
-$("#petProfile").hide();
