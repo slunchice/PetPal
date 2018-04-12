@@ -16,7 +16,7 @@ $.get(url + token + query, function(res) {
         url: event.url
       }
       // Appends each newEvent object to respective DOM elements
-      $("#eventLogo" + i + "").html("<img id='logo' src='" + newEvent.logo + "'/>");
+      $("#eventLogo" + i + "").html("<img style='border:10px solid black;padding:5px;'id='logo' src='" + newEvent.logo + "'/>");
       $("#eventName" + i + "").html(newEvent.name);
       $("#eventTime" + i + "").html(newEvent.time);
       var string = "Click here for more details!";
