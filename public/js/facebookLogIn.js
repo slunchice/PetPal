@@ -57,7 +57,9 @@ document.getElementById("facebookLogInButton").onclick = function () {
     console.log(profile);
   
     var newUser = {
-      name: profile.name,
+      firstName: profile.first_name,
+      lastName: profile.last_name,
+      photo: profile.picture.data.url,
       age: profile.age_range.min,
       gender: profile.gender,
       location: "Charlotte, NC",
