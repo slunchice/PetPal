@@ -22,6 +22,7 @@ window.fbAsyncInit = function () {
   FB.getLoginStatus(function (response) {
     statusChangeCallback(response);
   });
+  // hideModal();
 };
   
 (function (d, s, id) {
@@ -55,18 +56,17 @@ document.getElementById("facebookLogInButton").onclick = function () {
     console.log(profile);
   
     var newUser = {
-      firstName: profile.first_name,
-      lastName: profile.last_name,
+      name: profile.name,
       age: profile.age_range.min,
       gender: profile.gender,
       location: "Charlotte, NC",
-      photo: profile.picture.data.url
     }
   
     console.log(newUser);
   
     $("#profilePicture").html("<img id='profile picture' src='" + newUser.photo + "'/>");
     $("#userGreeting").html("Glad to have you, " + newUser.firstName + "!");
+
   
     // George's code ends here
     // ...
@@ -88,23 +88,35 @@ document.getElementById("facebookLogInButton").onclick = function () {
 document.getElementById("facebookSignOutButton").onclick = function () {
   firebase.auth().signOut().then(function () {
     // Sign-out successful.
-    alert("sign out successful");
+    // alert("sign out successful");
+    $("#profilePicture").html("You have signed out");
+    $("#userGreeting").html("come back soon!");
     console.log("sign out successful");
+
   }).catch(function (error) {
     // An error happened.
   });
 };
   
-function goToUserProfile(isLoggedIn) {
-  if (isLoggedIn) {
+// function goToUserProfile(isLoggedIn) {
+//   if (isLoggedIn) {
   
-  } else {
+//   } else {
   
-  }
-};
-  
+//   }  
+// };
+
+// function hideModal(response){
+//   if(response.status === "connected"){
+//     $('#facebookLoginModal').modal('hide');
+//   }else{
+//     $("#facebookLoginModal").modal('show');
+//   }
+// }
+
 function statusChangeCallback(response) {
-  if (reponse.status === "connected") {
+  console.log(response);
+  if (response.status === "connected") {
     console.log("you are logged in");
   } else {
     console.log("not authenticated");

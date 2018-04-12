@@ -9,11 +9,11 @@ var flickrFormatJSON = "&format=json&nojsoncallback=1";
 // Service call to Flickr API
 $.get(flickrUrl + flickrKey + flickrTag + flickrFormatJSON, function(res) {
   // console.log(res);
-  for (var i = 0; i < 10; i++) {
+  for (var i = 0; i < 12; i++) {
     var photo = res.photos.photo[i];
     var constructedPhoto = "https://farm" + photo.farm + ".staticflickr.com/" + photo.server + "/" + photo.id + "_" + photo.secret + ".jpg";
-    // console.log(photo);
+     console.log(photo);
     // console.log(constructedPhoto);
-    $("#puppies").append("<img id='puppy' src='" + constructedPhoto + "'/>");
+    $("#puppies").append("<img style='border: 2px solid black;height:200px;' class='puppy' src='" + constructedPhoto + "'/>");
   }
 });

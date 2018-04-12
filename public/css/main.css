@@ -24,6 +24,9 @@
   margin-top: 20px;
 }
 
+#carousel2 {
+}
+
 body {
   font-family: 'Domine', serif;
   background-image: url("../images/background.jpg");
@@ -274,6 +277,7 @@ textarea:focus, input:focus{
 #userGreeting {
   text-align: center;
 }
+<<<<<<< HEAD
 
 .form-style{
   margin: 20px;
@@ -283,3 +287,5 @@ textarea:focus, input:focus{
   margin-left: 60px;
   margin-right: 60px;
 }
+=======
+>>>>>>> dafe0a1f1d3b5e21506c05ebd4617ce719b751b3
