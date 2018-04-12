@@ -22,6 +22,7 @@ window.fbAsyncInit = function () {
   FB.getLoginStatus(function (response) {
     statusChangeCallback(response);
   });
+  // hideModal();
 };
   
 (function (d, s, id) {
@@ -104,7 +105,15 @@ document.getElementById("facebookSignOutButton").onclick = function () {
   
 //   }  
 // };
-  
+
+// function hideModal(response){
+//   if(response.status === "connected"){
+//     $('#facebookLoginModal').modal('hide');
+//   }else{
+//     $("#facebookLoginModal").modal('show');
+//   }
+// }
+
 function statusChangeCallback(response) {
   console.log(response);
   if (response.status === "connected") {
