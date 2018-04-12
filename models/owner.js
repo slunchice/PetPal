@@ -2,7 +2,7 @@ module.exports = function(sequelize, DataTypes) {
     // creating table of owners
     var Owner = sequelize.define("Owner", {
         // table columns for name, age, gender, and location
-      name: {
+      first_name: {
           type: DataTypes.STRING,
           allowNull: false
         // validating length of input, no external url links, and no special characters except - or '
@@ -12,6 +12,27 @@ module.exports = function(sequelize, DataTypes) {
           //   is: ["^[a-z-']+$",'i']
           // }
       },
+      last_name: {
+        type: DataTypes.STRING,
+        allowNull: false
+      // validating length of input, no external url links, and no special characters except - or '
+        // validate: {
+        //   len: [1, 255],
+        //   isUrl: false,
+        //   is: ["^[a-z-']+$",'i']
+        // }
+    },
+    photo: {
+        type: DataTypes.STRING,
+        allowNull: false
+      // validating length of input, no external url links, and no special characters except - or '
+        // validate: {
+        //   len: [1, 255],
+        //   isUrl: false,
+        //   is: ["^[a-z-']+$",'i']
+        // }
+    },
+
       age: {
           type: DataTypes.INTEGER,
           allowNull: false
