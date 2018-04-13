@@ -312,3 +312,13 @@ textarea:focus, input:focus{
   margin-left: 60px;
   margin-right: 60px;
 }
+
+#logo {
+  height: 100px;
+  width: 150px;
+  margin-right: 15px;
+}
+
+.description {
+  overflow: auto;
+}
