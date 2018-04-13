@@ -48,10 +48,18 @@ module.exports = function(app) {
   // Route for posting new EventBrite API events to database
   app.post("/api/events", function(req, res) {
     // Send events to database via Sequelize
+    db.Event.create({
+      name: req.body.name,
+      description: req.body.description,
+      logo: req.body.logo,
+      link: req.body.link
+    }).then(function(dbEvent) {
+      res.json(dbEvent);
+    });
   });
 
   // Route for getting existing EventBrite API events from database
-  app.get("/api/eventss", function(req, res) {
+  app.get("/api/events", function(req, res) {
     // Get events from database via Sequelize
   });
 
@@ -64,5 +72,5 @@ module.exports = function(app) {
   app.get("/api/photos", function(req, res) {
     // Get photos from database via Sequelize
   });
-  
+
 }
