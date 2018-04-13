@@ -27,17 +27,19 @@
 // });
 
 $.get("/api/events", function(res) {
-  if (res.length) {
-    for (var i = 0; i < res.length; i++) {
-      var event = res[i];
-      console.log(event);
-      var newEvent = {
-        logo: event.logo.url,
-        name: event.name.html,
-        time: event.start.local,
-        url: event.url
-      }
-      $("#eventName" + i + "").html(newEvent.name);
-    }
-  }
+  var result = res.JSON();
+  console.log(result);
+  // if (res.length) {
+  //   for (var i = 0; i < res.length; i++) {
+  //     var event = res[i];
+  //     console.log(event);
+  //     var newEvent = {
+  //       logo: event.logo.url,
+  //       name: event.name.html,
+  //       time: event.start.local,
+  //       url: event.url
+  //     }
+  //     $("#eventName" + i + "").html(newEvent.name);
+  //   }
+  // }
 });

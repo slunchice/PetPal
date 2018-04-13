@@ -37,12 +37,12 @@ module.exports = function(app) {
 
   app.post("/api/events", function(req, res) {
     console.log(req);
-    res.json();
+    res.send(req);
   });
 
   app.get("/api/events", function(req, res) {
     console.log(res);
-    res.json();
+    res.send(req);
   });
 
 }
