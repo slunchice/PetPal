@@ -1,5 +1,6 @@
 // importing `models` folder in order to use Sequelize models for Owner and Pet tables
 var db = require("../models")
+var event = require("../controllers/eventBriteController")
 
 module.exports = function(app) {
 
@@ -32,6 +33,16 @@ module.exports = function(app) {
     }).then(function(dbPet) {
       res.json(dbPet);
     });
+  });
+
+  app.post("/api/events", function(req, res) {
+    console.log(req);
+    res.json();
+  });
+
+  app.get("/api/events", function(req, res) {
+    console.log(res);
+    res.json();
   });
 
 }
