@@ -313,6 +313,7 @@ textarea:focus, input:focus{
   margin-right: 60px;
 }
 
+<<<<<<< HEAD
 .cara-img {
   width:72%;
   padding: 10px;
@@ -372,4 +373,14 @@ textarea:focus, input:focus{
 
 #photobooth-row {
   margin-top: -30px;
+=======
+#logo {
+  height: 100px;
+  width: 150px;
+  margin-right: 15px;
+}
+
+.description {
+  overflow: auto;
+>>>>>>> 5f5140aa0276057165dd162c77ab3fa0a7f8c690
 }

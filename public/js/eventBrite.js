@@ -8,20 +8,21 @@ $.get(url + token + query, function(res) {
   if (res.events.length) {
     for (var i = 0; i < 3; i++) {
       var event = res.events[i];
+      console.log(event);
       // Creates newEvent object with each return object in for loop
       var newEvent = {
         logo: event.logo.url,
         name: event.name.html,
-        time: event.start.local,
-        url: event.url
+        description: event.description.html,
+        link: event.url
       }
       // Appends each newEvent object to respective DOM elements
-      $("#eventLogo" + i + "").html("<img style='border:10px solid black;padding:5px;'id='logo' src='" + newEvent.logo + "'/>");
+      $("#eventLogo" + i + "").html("<img id='logo' src='" + newEvent.logo + "'/>");
       $("#eventName" + i + "").html(newEvent.name);
-      $("#eventTime" + i + "").html(newEvent.time);
-      var string = "Click here for more details!";
-      var result = string.link("" + newEvent.url + "");
-      $("#eventUrl" + i + "").html(result);
+      $("#eventDescription" + i + "").html(newEvent.description);
+      var string = "See More";
+      var result = string.link("" + newEvent.link + "");
+      $("#eventLink" + i + "").html(result);
     }
   }
 });

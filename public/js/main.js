@@ -12,15 +12,20 @@ $("#submitBtn").on("click", function (event) {
       var newPet = {
           name: $("#name").val().trim(),
           scores: [
-              $("#name").val(),
               $("#age").val(),
               $("#gender").val(),
-              $("#size").val(),
-              $("#breed").val(),
-              $("#bio").val(),
+              $("#size").val()
           ],
-          bio: $("#bio").val().trim(),
+          breed: $("#breed").val().trim(),
+          bio: $("#bio").val().trim()
       }
+
+      console.log(newPet);
+
+      $.post("/api/pet", newPet)
+        .then(function(data) {
+            console.log(data);
+        });
     }
 });
 

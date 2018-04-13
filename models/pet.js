@@ -2,72 +2,27 @@ module.exports = function(sequelize, DataTypes) {
     var Pet = sequelize.define("Pet",  {
         name: {
             type: DataTypes.STRING,
-            allowNull: false,
-            // no external urls allowed
-            isUrl: false,
-              
-            validate: {
-                len: [1, 255],
-                isUrl: false,
-                is: ["^[a-z-']+$",'i']
-              }
-            
+            allowNull: false 
         },
         gender: {
             type: DataTypes.STRING,
-            allowNull: false,
-            validate: {
-                isUrl: false,
-                len: [1, 255],
-                // no special characters allowed
-                is: ["^[a-z]+$",'i']
-              }
-              
-            
+            allowNull: false, 
         },
         age: {
             type: DataTypes.INTEGER,
-            allowNull: false,
-            validate: {
-                len: [1, 3],
-                isUrl: false,
-                // input must be an integer
-                isInt: true
-              }
-              
-            
+            allowNull: false, 
         },
         size: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            validate: {
-                isUrl: false,
-                len: [1, 255],
-                // no special characters allowed
-                is: ["^[a-z]+$",'i']
-              }
-              
-            
-            
+            type: DataTypes.STRING
+            // allowNull: false,  
         },
-        // optional input
         bio: {
             type: DataTypes.TEXT,
             allowNull: true,
-            isUrl: false
-              
-            
         },
-        // optional input
         breed: {
             type: DataTypes.STRING,
             allowNull: true,
-            validate: {
-                isUrl: false,
-                len: [1, 255],
-                // no special characters allowed
-                is: ["^[a-z]+$",'i']
-              }
         }
     });
 
