@@ -45,7 +45,7 @@ module.exports = function(app) {
     console.log(res);
   });
 
-  app.get("/api/events", function(req, res) {
+  app.get("/api/events", function(req, respond) {
     const https = require("https");
     https.post = require("http-post");
   
@@ -75,18 +75,16 @@ module.exports = function(app) {
 
       res.on("end", () => {
         body = JSON.parse(body);
-        // console.log(body.events[0]);
         for (let i = 0; i < 3; i++) {
           events.push(body.events[i]);
-          console.log(events[0]);
         }
+        console.log(events);
+        respond.json(events);
       });
 
-      console.log(events);
 
     });
 
-    res.json(events);
 
   });
 
