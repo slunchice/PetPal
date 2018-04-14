@@ -33,3 +33,13 @@ $("#submitBtn").on("click", function (event) {
 $("#pup-btn").on("click", function() {
   window.location.assign("../html/photobooth.html");
 })
+
+$(document).ready(function() {
+    $("#events").hide();
+    $("#photobooth-container").hide();
+    $("#submitBtn").on("click", function() {
+      $("#pet-profile-id").hide();
+      $("#events").show();
+      $("#photobooth-container").show();
+    });
+});
