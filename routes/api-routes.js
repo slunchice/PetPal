@@ -36,8 +36,8 @@ module.exports = function(app) {
   });
 
   app.post("/api/events", function(req, res) {
-    console.log(req);
-    res.send(req);
+    console.log(res);
+    res.json();
   });
 
   app.get("/api/events", function(req, res) {
@@ -56,14 +56,18 @@ module.exports = function(app) {
     const query =
       "&q=dogs&location.address=charlotte";
   
-    var events = [];
+    const events = [];
   
     https.get(url + token + query, res => {
+
       res.setEncoding("utf8");
+      
       let body = "";
+
       res.on("data", data => {
         body += data;
       });
+
       res.on("end", () => {
         body = JSON.parse(body);
         // console.log(body.events[0]);
@@ -71,12 +75,13 @@ module.exports = function(app) {
           events.push(body.events[i]);
           
         }
-        console.log(events);
-        res(events);
+        return events;
       });
+
+      console.log(events);
     });
 
-    
+    res.json(events);
     
 
   });

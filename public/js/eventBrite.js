@@ -26,8 +26,13 @@
 //   }
 // });
 
-$.get("/api/events", function(res) {
-  console.log(res);
+$.get("/api/events", function(data) {
+  console.log(data);
+  var helloWorld = "Hello world";
+  var stuff = data;
+  console.log(stuff);
+  stuff.push(helloWorld);
+  console.log(stuff);
   // if (res.length) {
   //   for (var i = 0; i < res.length; i++) {
   //     var event = res[i];
