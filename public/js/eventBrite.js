@@ -16,7 +16,7 @@ $.get("/api/events", function(data) {
       $("#eventName" + i + "").html(newEvent.name);
       $("#eventDescription" + i + "").html(newEvent.description);
       var string = "See more";
-      var result = string.link("" + newEvent.url + "");
+      var result = string.link("" + newEvent.link + "");
       $("#eventLink" + i + "").html(result);
     }
   }
