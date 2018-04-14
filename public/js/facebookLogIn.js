@@ -118,25 +118,21 @@ document.getElementById("facebookSignOutButton").onclick = function () {
 
 function statusChangeCallback(response) {
   console.log(response);
-  if (response.status === "connected") {
-    console.log("you are logged in");
-    $("#facebookLoginModal").modal('hide');
-  } else {
-    console.log("not authenticated");
-    $("#facebookLoginModal").modal('show');
-  }
+  // if (response.status === "connected") {
+  //   console.log("you are logged in");
+  //   $("#facebookLoginModal").modal('hide');
+  // } else {
+  //   console.log("not authenticated");
+  //   $("#facebookLoginModal").modal('show');
+  // }
 }
 
 function checkLoginState() {
   FB.getLoginStatus(function (response) {
-    // if (response.status === "connected") {
-    //   $('#facebookLoginModal').modal('hide');
-    // }else{
-    //   $("#facebookLoginModal").modal('show');      
-    // }
     statusChangeCallback(response);
   });
+  console.log(response.status)
 }
 
 // Show Facebook log-in modal
-// $("#facebookLoginModal").modal('show');
+$("#facebookLoginModal").modal('show');
