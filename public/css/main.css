@@ -129,9 +129,13 @@ body {
 
 #our-story {
   border-style: solid;
-  border-width: 1px;
+  border-width: 2px;
   padding: 30px;
   margin-bottom: 100px;
+  background-color: rgba(255, 255, 255, 0.253);
+}
+
+.team-title {
   background-color: rgba(255, 255, 255, 0.253);
 }
 
@@ -301,6 +305,10 @@ textarea:focus, input:focus{
   margin-top: -20px;
 }
 
+#events {
+  margin-top: 100px;
+}
+
 #event-btn {
   width: 60%;
 }
@@ -396,4 +404,24 @@ textarea:focus, input:focus{
 
 #profile-user-pic {
   max-height: 180px;
+}
+
+.dog-hover:hover {
+  background-color: rgba(255, 255, 255, 0.171);
+}
+
+.dog-hover {
+  margin-bottom: 5px;
+  border-radius: 25px;
+}
+
+.dog-display-imgs {
+  margin-bottom: 10px;
+  
+}
+
+#linebreakkkk {
+  width: 20%!important;
+  margin-top: -5px;
+  margin-bottom: 5px;
 }

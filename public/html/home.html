@@ -26,6 +26,17 @@
 </head>
 
 <body>
+  <script>
+$(document).ready(function() {
+    $("#events").hide();
+    $("#photobooth-container").hide();
+    $("#submitBtn").on("click", function() {
+      $("#pet-profile-id").hide();
+      $("#events").show();
+      $("#photobooth-container").show();
+    });
+});
+    </script>
 
 
 <!-- =================== Modals =================== -->
@@ -53,7 +64,7 @@
 </div>
 
 <!-- Pet Profile -->
-<div class="jumbotron jumbotron-fluid spacing">
+<div class="jumbotron jumbotron-fluid spacing" id="pet-profile-id">
   <div class="container">
     <div class="container content">
         <h1>Build a New Pet Profile</h1>
@@ -189,7 +200,7 @@
           <div class="row">
             <div class="col-lg-12">
               <div class="container event-btn">
-                <button class="btn" id="eventLink0">See More</button>
+                <button class="btn" target="_blank" id="eventLink0">See More</button>
               </div>
             </div>
           </div>
@@ -222,7 +233,7 @@
             <div class="row">
               <div class="col-lg-12">
                 <div class="container event-btn">
-                  <button class="btn" id="eventLink1">See More</button>
+                  <button class="btn" target="_blank" id="eventLink1">See More</button>
                 </div>
               </div>
             </div>
@@ -255,7 +266,7 @@
             <div class="row">
               <div class="col-lg-12">
                 <div class="container event-btn">
-                  <button class="btn" id="eventLink2">See More</button>
+                  <button class="btn" target="_blank" id="eventLink2">See More</button>
                 </div>
               </div>
             </div>
@@ -279,19 +290,19 @@
       <div class="container">
         <div class="row dog-row">
 
-          <div class="col-lg-4">
-              <h3>Dog Name</h3>
-              <img class="dog-display-imgs puppies" src="../images/puppy1.jpg">
+          <div class="col-lg-4 dog-hover">
+              <h3>Bella</h3>
+              <img class="dog-display-imgs puppies img-responsive" src="../images/puppies/puppy5.jpg">
           </div>
 
-          <div class="col-lg-4">
-              <h3>Dog Name</h3>
-              <img class="dog-display-imgs" src="../images/puppy1.jpg">
+          <div class="col-lg-4 dog-hover">
+              <h3>Max</h3>
+              <img class="dog-display-imgs img-responsive" src="../images/puppies/puppy4.jpg">
           </div>
 
-          <div class="col-lg-4">
-              <h3>Dog Name</h3>
-              <img class="dog-display-imgs" src="../images/puppy1.jpg">
+          <div class="col-lg-4 dog-hover">
+              <h3>Charlie</h3>
+              <img class="dog-display-imgs img-responsive" src="../images/puppies/puppy6.jpg">
           </div>
 
         </div>
@@ -301,19 +312,19 @@
       <div class="container">
           <div class="row dog-row">
 
-            <div class="col-lg-4">
-                <h3>Dog Name</h3>
-                <img class="dog-display-imgs" src="../images/puppy1.jpg">
+            <div class="col-lg-4 dog-hover">
+                <h3>Daisy</h3>
+                <img class="dog-display-imgs img-responsive" src="../images/puppies/puppy1.jpg">
             </div>
 
-            <div class="col-lg-4">
-                <h3>Dog Name</h3>
-                <img class="dog-display-imgs" src="../images/puppy1.jpg">
+            <div class="col-lg-4 dog-hover">
+                <h3>Luna</h3>
+                <img class="dog-display-imgs img-responsive" src="../images/puppies/puppy2.jpg">
             </div>
 
-            <div class="col-lg-4">
-                <h3>Dog Name</h3>
-                <img class="dog-display-imgs" src="../images/puppy1.jpg">
+            <div class="col-lg-4 dog-hover">
+                <h3>Oliver</h3>
+                <img class="dog-display-imgs img-responsive" src="../images/puppies/puppy3.jpg">
             </div>
 
           </div>

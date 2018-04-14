@@ -32,4 +32,8 @@ $("#submitBtn").on("click", function (event) {
 
 $("#pup-btn").on("click", function() {
   window.location.assign("../html/photobooth.html");
-})
+});
+
+$("#my-pet-profile").on("click", function() {
+    window.location.assign("../html/profile.html");
+});
