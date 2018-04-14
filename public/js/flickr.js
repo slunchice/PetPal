@@ -12,7 +12,7 @@ $.get(flickrUrl + flickrKey + flickrTag + flickrFormatJSON, function(res) {
   for (var i = 0; i < 12; i++) {
     var photo = res.photos.photo[i];
     var constructedPhoto = "https://farm" + photo.farm + ".staticflickr.com/" + photo.server + "/" + photo.id + "_" + photo.secret + ".jpg";
-     console.log(photo);
+    //  console.log(photo);
     // console.log(constructedPhoto);
     $("#puppy" + i + "").append("<img style='max-height:100px;' class='puppy' src='" + constructedPhoto + "'/>");
   }
