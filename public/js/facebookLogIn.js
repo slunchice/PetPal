@@ -9,7 +9,7 @@ var config = {
 };
 firebase.initializeApp(config);
 var provider = new firebase.auth.FacebookAuthProvider();
-  
+
 //from facebook
 window.fbAsyncInit = function () {
   FB.init({
@@ -18,14 +18,14 @@ window.fbAsyncInit = function () {
     xfbml: true,
     version: 'v2.12'
   });
-  
+
   FB.getLoginStatus(function (response) {
     console.log(response);
     statusChangeCallback(response);
     console.log(response);
   });
 };
-  
+
 (function (d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) { return; }
@@ -33,7 +33,7 @@ window.fbAsyncInit = function () {
   js.src = "https://connect.facebook.net/en_US/sdk.js";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));
-  
+
 // sign into facebook
 // !George changed the id to match the modal button id
 document.getElementById("facebookLogInButton").onclick = function () {
@@ -44,18 +44,18 @@ document.getElementById("facebookLogInButton").onclick = function () {
     // The signed-in user info.
     var user = result.user;
     // ...
-  
+
     // !George commented out these lines for testing
     // console.log("hi, " + user.displayName);
     // console.log(user);
     // console.log("the user facebook token is " + token);
-  
+
     // George's added code starts here
     // ...
     console.log(result);
     var profile = result.additionalUserInfo.profile;
     console.log(profile);
-  
+
     var newUser = {
       firstName: profile.first_name,
       lastName: profile.last_name,
@@ -64,19 +64,19 @@ document.getElementById("facebookLogInButton").onclick = function () {
       gender: profile.gender,
       location: "Charlotte, NC",
     }
-  
+
     $.post("/api/owner", newUser)
-      .then(function(data) {
+      .then(function (data) {
         console.log(data);
       });
-  
+
     $("#profilePicture").html("<img id='profile picture' src='" + newUser.photo + "'/>");
     $("#userGreeting").html("Glad to have you, " + newUser.firstName + "!");
 
-  
+
     // George's code ends here
     // ...
-  
+
   }).catch(function (error) {
     // Handle Errors here.
     var errorCode = error.code;
@@ -89,7 +89,7 @@ document.getElementById("facebookLogInButton").onclick = function () {
     // ...
   });
 }
-  
+
 //sign out of facebook
 document.getElementById("facebookSignOutButton").onclick = function () {
   firebase.auth().signOut().then(function () {
@@ -103,37 +103,40 @@ document.getElementById("facebookSignOutButton").onclick = function () {
     // An error happened.
   });
 };
-  
+
 // function goToUserProfile(isLoggedIn) {
 //   if (isLoggedIn) {
-  
+
 //   } else {
-  
+
 //   }  
 // };
 
-function modalStatus(response){
-  if(response.status === "connected"){
-    $('#facebookLoginModal').modal('hide');
-  }
-}
+// function modalStatus(response){
+
+// }
 
 function statusChangeCallback(response) {
   console.log(response);
   if (response.status === "connected") {
     console.log("you are logged in");
-    $("#facebookLoginModal").modal('hide');    
+    $("#facebookLoginModal").modal('hide');
   } else {
     console.log("not authenticated");
     $("#facebookLoginModal").modal('show');
   }
 }
-  
+
 function checkLoginState() {
   FB.getLoginStatus(function (response) {
+    // if (response.status === "connected") {
+    //   $('#facebookLoginModal').modal('hide');
+    // }else{
+    //   $("#facebookLoginModal").modal('show');      
+    // }
     statusChangeCallback(response);
   });
 }
-  
+
 // Show Facebook log-in modal
-$("#facebookLoginModal").modal('show');
+// $("#facebookLoginModal").modal('show');
