@@ -14,6 +14,6 @@ $.get(flickrUrl + flickrKey + flickrTag + flickrFormatJSON, function(res) {
     var constructedPhoto = "https://farm" + photo.farm + ".staticflickr.com/" + photo.server + "/" + photo.id + "_" + photo.secret + ".jpg";
      console.log(photo);
     // console.log(constructedPhoto);
-    $("#puppies").append("<img style='border: 2px solid black;height:200px;' class='puppy' src='" + constructedPhoto + "'/>");
+    $(".puppies").append("<img style='border: 2px solid black;height:200px;' class='puppy' src='" + constructedPhoto + "'/>");
   }
 });
