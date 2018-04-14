@@ -285,7 +285,7 @@ textarea:focus, input:focus{
 }
 
 .event-img {
-
+  height: 100px;
 }
 
 .event-btn {
