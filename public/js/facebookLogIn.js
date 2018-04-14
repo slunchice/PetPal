@@ -104,18 +104,6 @@ document.getElementById("facebookSignOutButton").onclick = function () {
   });
 };
 
-// function goToUserProfile(isLoggedIn) {
-//   if (isLoggedIn) {
-
-//   } else {
-
-//   }  
-// };
-
-// function modalStatus(response){
-
-// }
-
 function statusChangeCallback(response) {
   console.log(response);
   // if (response.status === "connected") {
