@@ -27,8 +27,7 @@
 // });
 
 $.get("/api/events", function(res) {
-  var result = res.JSON();
-  console.log(result);
+  console.log(res);
   // if (res.length) {
   //   for (var i = 0; i < res.length; i++) {
   //     var event = res[i];
