@@ -30,3 +30,6 @@ $("#submitBtn").on("click", function (event) {
 });
 
 
+$("#pup-btn").on("click", function() {
+  window.location.assign("../html/photobooth.html");
+})
