@@ -136,4 +136,4 @@ function checkLoginState() {
 }
   
 // Show Facebook log-in modal
-// $("#facebookLoginModal").modal('show');
+$("#facebookLoginModal").modal('show');
