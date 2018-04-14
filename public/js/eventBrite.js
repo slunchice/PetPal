@@ -8,7 +8,7 @@ $.get(url + token + query, function(res) {
   if (res.events.length) {
     for (var i = 0; i < 3; i++) {
       var event = res.events[i];
-      console.log(event);
+      // console.log(event);
       // Creates newEvent object with each return object in for loop
       var newEvent = {
         logo: event.logo.url,
@@ -25,4 +25,8 @@ $.get(url + token + query, function(res) {
       $("#eventLink" + i + "").html(result);
     }
   }
+});
+
+$.get("/api/events", function(data) {
+  console.log(data);
 });
