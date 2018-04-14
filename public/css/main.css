@@ -301,6 +301,10 @@ textarea:focus, input:focus{
   margin-top: -20px;
 }
 
+#events {
+  margin-top: 100px;
+}
+
 #event-btn {
   width: 60%;
 }
