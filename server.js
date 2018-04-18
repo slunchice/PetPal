@@ -5,8 +5,8 @@ var express = require("express");
 var bodyParser = require("body-parser");
 var path = require("path");
 var keys = require("./keys.js");
-var EventBriteAPI = require("node-eventbrite");
 
+var EventBriteAPI = require("node-eventbrite");
 var eventBrite = new EventBriteAPI(keys.eventBrite);
 
 // Sets up the Express App

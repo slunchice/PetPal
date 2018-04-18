@@ -67,7 +67,7 @@ module.exports = function (app) {
   });
 
   // Route for getting EventBrite API data
-  app.get("/api/events", function(req, respond) {
+  app.get("/api/events", function(request, respond) {
   
     const events = [];
 
