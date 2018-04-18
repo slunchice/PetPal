@@ -52,23 +52,22 @@ document.getElementById("facebookLogInButton").onclick = function () {
 
     // George's added code starts here
     // ...
-    // console.log(result);
+
     var profile = result.additionalUserInfo.profile;
-    // console.log(profile);
 
     var newUser = {
+
       firstName: profile.first_name,
       lastName: profile.last_name,
       photo: profile.picture.data.url,
       age: profile.age_range.min,
       gender: profile.gender,
-      location: "Charlotte, NC",
+      location: "Charlotte, NC"
+
     }
 
     $.post("/api/owner", newUser)
-      .then(function (data) {
-        console.log(data);
-      });
+      .then(function (data) {});
 
     $("#profilePicture").html("<img id='profile picture' src='" + newUser.photo + "'/>");
     $("#userGreeting").html("Glad to have you, " + newUser.firstName + "!");
