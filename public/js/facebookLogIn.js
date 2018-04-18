@@ -20,9 +20,9 @@ window.fbAsyncInit = function () {
   });
 
   FB.getLoginStatus(function (response) {
-    console.log(response);
+    // console.log(response);
     statusChangeCallback(response);
-    console.log(response);
+    // console.log(response);
   });
 };
 
@@ -52,9 +52,9 @@ document.getElementById("facebookLogInButton").onclick = function () {
 
     // George's added code starts here
     // ...
-    console.log(result);
+    // console.log(result);
     var profile = result.additionalUserInfo.profile;
-    console.log(profile);
+    // console.log(profile);
 
     var newUser = {
       firstName: profile.first_name,
